@@ -1,8 +1,9 @@
-// import React from 'react'
-// import styled from 'styled-components'
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Search from '@mui/icons-material/Search';
+import Search from "@mui/icons-material/Search";
+import Badge from "@mui/material/Badge";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
 
 const StyledNavbar = styled.div`
   height: 60px;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-  flex: 1;
+  flex: 0.5;
   text-align: center;
 `
 
@@ -29,11 +30,16 @@ const Logo = styled.h1`
 `
 
 const Right = styled.div`
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: end;
+`
+
+const MenuItem = styled.div`
+  font-size: 13px;
+  cursor: pointer;
 `
 
 const LanguageStyle = styled.span`
@@ -69,13 +75,21 @@ class Navbar extends Component {
           <Left> 
             <Logo>Bridge Ease</Logo>
           </Left>
-          <Center>Center item</Center>
-          <Right>
-            <LanguageStyle>ENG</LanguageStyle>
+          <Center>
             <SearchContainer>
               <Search />
               <Input />
             </SearchContainer>
+          </Center>
+          <Right>
+            <MenuItem>MenuItem</MenuItem>
+            <MenuItem>MenuItem</MenuItem>
+            <MenuItem>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlinedIcon />
+              </Badge>
+            </MenuItem>
+            <LanguageStyle>ENG</LanguageStyle>            
           </Right>
         </Wrapper>
       </StyledNavbar>
