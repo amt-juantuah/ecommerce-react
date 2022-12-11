@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Search from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { ShoppingCartOutlined, Search } from '@mui/icons-material';
 
 
 const StyledNavbar = styled.div`
@@ -33,13 +32,14 @@ const Right = styled.div`
   flex: 1.5;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: end;
+  justify-content: flex-end;
 `
 
 const MenuItem = styled.div`
   font-size: 13px;
   cursor: pointer;
+  margin-left: 25px;
+  margin-right: 15px;
 `
 
 const LanguageStyle = styled.span`
@@ -77,7 +77,7 @@ class Navbar extends Component {
           </Left>
           <Center>
             <SearchContainer>
-              <Search />
+              <Search style={{color: 'lightgrey', fontSize: '14px'}}/>
               <Input />
             </SearchContainer>
           </Center>
@@ -86,7 +86,7 @@ class Navbar extends Component {
             <MenuItem>MenuItem</MenuItem>
             <MenuItem>
               <Badge badgeContent={4} color="primary">
-                <ShoppingCartOutlinedIcon />
+                <ShoppingCartOutlined />
               </Badge>
             </MenuItem>
             <LanguageStyle>ENG</LanguageStyle>            
