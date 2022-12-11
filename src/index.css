@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 
+:root {
+  --color-orange: #f1b604;
+  --color-blue: #939bf4;
+  --color-btn-prim: #44cdef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }

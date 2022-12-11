@@ -23,9 +23,10 @@ const Left = styled.div`
   text-align: center;
 `
 
-const Logo = styled.h1`
+const Logo = styled.h2`
   font-weight: bold;
   cursor: pointer;
+  color: var(--color-orange);
 `
 
 const Right = styled.div`
@@ -35,16 +36,27 @@ const Right = styled.div`
   justify-content: flex-end;
 `
 
+const MenuStyle = styled.div`
+  height: 40px; 
+  border-radius: 5px; 
+  padding: 4px; 
+  background-color: #f1b604; 
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+`
+
 const MenuItem = styled.div`
   font-size: 13px;
   cursor: pointer;
-  margin-left: 25px;
-  margin-right: 15px;
+  margin-left: 20px;
 `
 
 const LanguageStyle = styled.span`
   color: red;
   cursor: pointer;
+  margin-left: 25px;
+  font-size: 13px;
 `
 
 const SearchContainer = styled.div`
@@ -57,7 +69,6 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
-  margin-left: 15px;
   padding: 4px;
   outline: none;
 `
@@ -77,18 +88,20 @@ class Navbar extends Component {
           </Left>
           <Center>
             <SearchContainer>
-              <Search style={{color: 'lightgrey', fontSize: '14px'}}/>
+              <Search style={{color: 'lightgrey', fontSize: '18px', marginRight: "5px"}}/>
               <Input />
             </SearchContainer>
           </Center>
           <Right>
-            <MenuItem>MenuItem</MenuItem>
-            <MenuItem>MenuItem</MenuItem>
-            <MenuItem>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartOutlined />
-              </Badge>
-            </MenuItem>
+            <MenuStyle>
+              <MenuItem>Signup</MenuItem>
+              <MenuItem>Login</MenuItem>
+              <MenuItem>
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartOutlined style={{color: "#001"}}/>
+                </Badge>
+              </MenuItem>
+            </MenuStyle>
             <LanguageStyle>ENG</LanguageStyle>            
           </Right>
         </Wrapper>
