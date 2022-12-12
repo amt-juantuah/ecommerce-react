@@ -6,8 +6,8 @@ import { ShoppingCartOutlined, Search } from '@mui/icons-material';
 
 const StyledNavbar = styled.div`
   height: 60px;
-  background-color: white;
-`
+  background-color: #393a34;
+`;
 
 const Wrapper = styled.div`
   padding: 10px 20px;
@@ -15,72 +15,85 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-`
+  // background-color: white;
+`;
 
 const Left = styled.div`
   flex: 1;
   text-align: start;
   padding-left: 50px;
-`
+`;
 
 const Logo = styled.h2`
   font-weight: bold;
   cursor: pointer;
   color: var(--color-orange);
-`
+`;
 
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`
+`;
 
 const MenuStyle = styled.div`
   height: 40px; 
   border-radius: 5px; 
   padding: 4px; 
-  background-color: #f1b604; 
+  border: 2px solid #f1b604; 
   display: inline-flex;
   align-items: center;
-  color: #fff;
-`
+  color: #f1b604;
+  &:hover {
+    background-color: #f1b604;
+    color: #fff;
+  }
+`;
 
 const MenuItem = styled.div`
   font-size: 13px;
   cursor: pointer;
   margin-left: 20px;
-`
+`;
 
 const LanguageStyle = styled.span`
   color: red;
   cursor: pointer;
   margin-left: 25px;
   font-size: 13px;
-`
-
-const SearchContainer = styled.div`
-  border: 0.4px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-  justify-content: space-around;
-  border-radius: 12px;
 `;
 
 const Input = styled.input`
   border: none;
-  padding: 4px;
+  padding: 8px;
   outline: none;
   width: 90%;
-`
+  border-radius: 0 8px 8px 0;
+  border-left: 2px solid #f1b604;
+  &::placeholder {
+    color: #393a34;
+  }
+`;
+
+const SearchContainer = styled.div`
+  border: 2px solid #f1b604;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-around;
+  border-radius: 12px;
+  width: 100%;
+  height: 40px
+  &:hover ${Input} {
+    background-color: #f1b604;
+  }
+`;
 
 const Center = styled.div`
   flex: 1;
   text-align: center;
-`
+`;
 
 class Navbar extends Component {
   render() {
@@ -88,11 +101,11 @@ class Navbar extends Component {
       <StyledNavbar>
         <Wrapper>
           <Left> 
-            <Logo>Bridge Ease</Logo>
+            <Logo>MegaTron</Logo>
           </Left>
           <Center>
             <SearchContainer>
-              <Search style={{color: 'lightgrey', fontSize: '18px', marginRight: "5px"}}/>
+              <Search style={{fontSize: '18px', marginRight: "5px"}} />
               <Input placeholder='Search for brand...'/>
             </SearchContainer>
           </Center>

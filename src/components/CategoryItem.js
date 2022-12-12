@@ -8,6 +8,7 @@ const Container = styled.div`
     position: relative;
     border: 1px solid #ced4de;
     border-radius: 16px;
+    background-color: #fff;
 `;
 
 const Image = styled.div`
@@ -19,6 +20,8 @@ const Image = styled.div`
     background-repeat: no-repeat;
     // position: relative;
     z-index: 1;
+    margin-right: auto;
+    margin-left: auto;
 `;
 
 const Info = styled.div`
@@ -38,14 +41,14 @@ const Info = styled.div`
 const InfoCard = styled.div`
     width: 100%;
     height: 150px;
-    background-color: #d6dff0c7;
+    background-color: #e4c38dad;
     border-radius: 5px;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    color: #06108d;
+    color: #007020;
     &: hover button {
         color: #fff;
         background-color: #f1b604;
@@ -63,7 +66,7 @@ const Description = styled.p`
 
 const Button = styled.button`
     font-size: 12px;
-    background-color: #06108d;
+    background-color: #007020;
     color: #d6dff0;
     height: 40px;
     width: 120px;

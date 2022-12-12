@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     height: 20px;
-    border: 2px solid var(--color-blue);
+    border: 2px solid #f1b604;
     color: black;
     font-size: 12px;
     display: flex;
