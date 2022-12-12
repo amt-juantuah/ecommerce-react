@@ -4,11 +4,10 @@ import { categoryData } from '../slideData';
 import CategoryItem from './CategoryItem';
 
 const Container = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px;
-    overflow: auto;
+    padding: 10px;
     gap: 20px;
 `;
 

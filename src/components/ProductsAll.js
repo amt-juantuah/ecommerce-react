@@ -3,7 +3,15 @@ import styled from 'styled-components';
 import { categoryData } from '../slideData';
 import Product from './Product';
 
-const Container = styled.div``;
+const Container = styled.div`
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 20px;
+`;
 
 
 class ProductsAll extends Component {

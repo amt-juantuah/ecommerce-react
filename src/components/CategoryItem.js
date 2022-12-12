@@ -3,17 +3,18 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     // flex: 1;
-    width: 350px;
-    height: 400px;
-    margin: 3px;
+    width: 300px;
+    height: 350px;
     position: relative;
+    border: 1px solid #ced4de;
+    border-radius: 16px;
 `;
 
 const Image = styled.div`
     background-image: url(${props => props.img});
-    width: 350px;
-    height: 400px;
-    background-size: cover;
+    width: 250px;
+    height: 200px;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     // position: relative;
@@ -30,7 +31,7 @@ const Info = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     padding: 20px;
 `;
 
@@ -51,19 +52,30 @@ const InfoCard = styled.div`
     }
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+    text-align: center;
+`;
 
-const Description = styled.p``;
+const Description = styled.p`
+    text-align: center;
+    font-size: 13px;
+`;
 
 const Button = styled.button`
-    font-size: 14px;
+    font-size: 12px;
     background-color: #06108d;
     color: #d6dff0;
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 120px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition: all 500ms;
+    &:hover {
+      opacity: 0.7;
+      color: #fff;
+      border: 1px solid #06108d;
+    }
 `;
 
 class CategoryItem extends Component {

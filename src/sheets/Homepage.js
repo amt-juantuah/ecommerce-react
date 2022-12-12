@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Announcement from '../components/Announcement';
 import Categories from '../components/Categories';
 import Navbar from '../components/Navbar';
+import ProductsAll from '../components/ProductsAll';
 import Slider from '../components/Slider';
 
 class Homepage extends Component {
@@ -12,6 +13,7 @@ class Homepage extends Component {
         <Navbar />
         <Slider />
         <Categories />
+        <ProductsAll />
       </div>
     )
   }

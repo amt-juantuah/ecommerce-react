@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-flow: row;
     transform: translateX(${props => props.sl * -100}vw);
-    transition: transform 1000ms;
+    transition: all 1000ms;
 `;
 
 const BannerSlide = styled.div`
@@ -62,6 +62,10 @@ const Button = styled.button`
     border-radius: 4px;
     border: none;
     cursor: pointer;
+    transition: all 500ms;
+    &: hover {
+        opacity: 0.5;
+    }
 `;
 
 
