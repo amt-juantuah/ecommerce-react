@@ -28,6 +28,7 @@ const Logo = styled.h2`
   font-weight: bold;
   cursor: pointer;
   color: var(--color-orange);
+  width: 70px;
 `;
 
 const Right = styled.div`
@@ -84,7 +85,7 @@ const SearchContainer = styled.div`
   justify-content: space-around;
   border-radius: 12px;
   width: 100%;
-  height: 40px
+  height: 40px;
   &:hover ${Input} {
     background-color: #f1b604;
   }

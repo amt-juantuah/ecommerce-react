@@ -1,4 +1,4 @@
-import { LocalShippingRounded, StoreTwoTone } from '@mui/icons-material';
+import { FavoriteBorder, LocalShippingRounded, StoreTwoTone } from '@mui/icons-material';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { categoryData } from '../slideData';
@@ -46,7 +46,7 @@ class Categories extends Component {
           <Free>
             <LocalShippingRounded />
             <StoreTwoTone />
-            <p>FOR FREE</p>
+            <p style={{display: "inline-flex", gap: "10px"}}>DELIVERY IS FREE... yeah we {<FavoriteBorder />} you too!</p>
           </Free>
         </Division>
         <CategoryContainer>
