@@ -95,9 +95,7 @@ class Slider extends Component {
     }
 
     handleClick(dir) {
-        console.log(dir, "arrow clicked");
         const num = this.state.slideIndex;
-        console.log("starting at", num);
 
         if (dir === 'right') {
             if (num >= 0 && num < 3) {
@@ -109,7 +107,6 @@ class Slider extends Component {
                     {slideIndex: 0}
                 ))
             }
-            console.log("ending at",this.state.slideIndex)
         } else if (dir === 'left') {            
             if (num <= 3 && num > 0) {
                 this.setState(st => (
@@ -120,7 +117,6 @@ class Slider extends Component {
                     {slideIndex: 3}
                 ))
             }
-            console.log("ending at",this.state.slideIndex);            
         }
     }
     render() {
@@ -133,7 +129,7 @@ class Slider extends Component {
             <Wrapper sl={this.state.slideIndex}>
                 { 
                     slideData.map(item => (
-                        <BannerSlide bg={item.bg}>
+                        <BannerSlide key={item.id} bg={item.bg}>
                             <BannerImage bg={item.img}></BannerImage>
                             <BannerInfo lc={item.lc}>
                                 <Title>{item.title}</Title>
