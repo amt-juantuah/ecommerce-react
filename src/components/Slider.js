@@ -32,7 +32,7 @@ const BannerImage = styled.div`
     flex: 1;
     height: 100vh;
     background-image: url(${props => props.bg});
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 `;
@@ -50,6 +50,7 @@ const Description = styled.p`
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 3px;
+    max-width: 300px; 
 `;
 
 const Button = styled.button`

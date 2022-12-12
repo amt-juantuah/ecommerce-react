@@ -11,6 +11,8 @@ const Container = styled.div`
     justify-content: space-between;
     padding: 10px;
     gap: 20px;
+    padding: 50px;
+    background-color: #d4dbdb;
 `;
 
 

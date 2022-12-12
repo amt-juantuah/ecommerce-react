@@ -19,8 +19,9 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-  flex: 0.5;
-  text-align: center;
+  flex: 1;
+  text-align: start;
+  padding-left: 50px;
 `
 
 const Logo = styled.h2`
@@ -30,7 +31,7 @@ const Logo = styled.h2`
 `
 
 const Right = styled.div`
-  flex: 1.5;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -65,12 +66,15 @@ const SearchContainer = styled.div`
   align-items: center;
   margin-left: 25px;
   padding: 5px;
+  justify-content: space-around;
+  border-radius: 12px;
 `;
 
 const Input = styled.input`
   border: none;
   padding: 4px;
   outline: none;
+  width: 90%;
 `
 
 const Center = styled.div`
@@ -89,7 +93,7 @@ class Navbar extends Component {
           <Center>
             <SearchContainer>
               <Search style={{color: 'lightgrey', fontSize: '18px', marginRight: "5px"}}/>
-              <Input />
+              <Input placeholder='Search for brand...'/>
             </SearchContainer>
           </Center>
           <Right>
