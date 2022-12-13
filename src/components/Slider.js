@@ -103,23 +103,23 @@ class Slider extends Component {
         const num = this.state.slideIndex;
 
         if (dir === 'right') {
-            if (num >= 0 && num < 3) {
+            if (num >= 0 && num < 4) {
                 this.setState(st => (
                     {slideIndex: num + 1}
                 ))
-            } else if (num === 3) {
+            } else if (num === 4) {
                 this.setState(st => (
                     {slideIndex: 0}
                 ))
             }
         } else if (dir === 'left') {            
-            if (num <= 3 && num > 0) {
+            if (num <= 4 && num > 0) {
                 this.setState(st => (
                     {slideIndex: num - 1}
                 ))
             } else if (num === 0) {
                 this.setState(st => (
-                    {slideIndex: 3}
+                    {slideIndex: 4}
                 ))
             }
         }

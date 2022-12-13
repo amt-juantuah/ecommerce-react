@@ -35,8 +35,8 @@ const Container = styled.div`
     }
 `;
 
-const Circle = styled.div`
-    background-color: #06108d45;
+const PiictureBack = styled.div`
+    background-color: #fff;
     width: 150px;
     height: 150px;
     position: absolute;
@@ -74,7 +74,7 @@ class Product extends Component {
   render() {
     return (
       <Container>
-        <Circle />
+        <PiictureBack />
         <Image img={this.props.det.img} />
         <Info>
             <Icon>

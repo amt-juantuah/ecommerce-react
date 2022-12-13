@@ -7,6 +7,9 @@ import { ShoppingCartOutlined, Search } from '@mui/icons-material';
 const StyledNavbar = styled.div`
   height: 60px;
   background-color: #393a34;
+  position: sticky;
+  top: 0;
+  z-index: 4;
 `;
 
 const Wrapper = styled.div`
