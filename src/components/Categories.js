@@ -1,4 +1,4 @@
-import { FavoriteBorder, LocalShippingRounded, StoreTwoTone } from '@mui/icons-material';
+import { LocalShippingRounded, StoreTwoTone } from '@mui/icons-material';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { categoryData } from '../slideData';
@@ -47,7 +47,6 @@ const CategoryContainer = styled.div`
     justify-content: space-between;
     padding: 50px;
     gap: 20px;
-    background-color: #fff;
 `;
 
 class Categories extends Component {
@@ -59,7 +58,7 @@ class Categories extends Component {
           <Free>
             <LocalShippingRounded />
             <StoreTwoTone />
-            <p style={{display: "inline-flex", gap: "10px"}}>DELIVERY IS FREE... yeah we {<FavoriteBorder />} you too!</p>
+            <p>DELIVERY IS FREE... yeah we love you too!</p>
           </Free>
         </Division>
         <CategoryContainer>

@@ -1,9 +1,9 @@
-import { FactoryOutlined, LocalShippingOutlined, PhoneIphoneOutlined, StoreOutlined } from '@mui/icons-material';
+import { CategoryOutlined, FactoryOutlined, VerifiedUserOutlined, LocalShippingOutlined, PhoneIphoneOutlined, StoreOutlined } from '@mui/icons-material';
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const Container = styled.div`
-    padding: 60px 30px;
+    padding: 60px 0 0 0;
     width: 100vw;
     height: auto;
 `;
@@ -13,6 +13,7 @@ const Into = styled.div`
     height: auto;
     margin-bottom: 30px;
     color: var(--color-brown);
+    margin-left: 50px;
 `;
 
 const IntoTitle = styled.h3`
@@ -104,6 +105,39 @@ const Button = styled.button`
     }
 `;
 
+const Figures = styled.div`
+    min-height: 400px;
+    width: auto;
+    margin-right: 100px;
+    border-radius: 0 50px 0 0;
+    background-color: var(--color-brown);
+    padding-top: 50px;
+    padding-bottom: 30px;
+    & ${Into} {
+        color: #fff;
+    }
+`;
+
+const FigureCard = styled.div`
+    display: flex;
+    min-height: 120px;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    & svg {
+        color: #fff;
+    };
+    & ${IntoMessage} {
+        color: #fff;
+        font-size: 40px;
+    };
+    & ${IntoTitle} {
+        color: #fff;
+    }
+`;
+
+
+
 
 class Propositions extends Component {
   render() {
@@ -136,7 +170,19 @@ class Propositions extends Component {
                 <Button>Join and Grow</Button>
             </PropositionCard>
             <PropositionCard>
-                <CardTitle>Boom</CardTitle>
+                <CardTitle>Brand Standards Execution</CardTitle>
+                <IconContainerDiv>
+                    <IconContainer>
+                        <VerifiedUserOutlined />
+                    </IconContainer>
+                </IconContainerDiv>
+                <CardWords>
+                    Your Brand and Company-specific execution standards are important to us. If it is standards in POS, mechandizing, branding, display, and sales KPIs <br /><br /><br/> <b>We have you covered</b> 
+                </CardWords>
+                <Button>Reach Out</Button>
+            </PropositionCard>
+            <PropositionCard>
+                <CardTitle>Last Mile Master, Technology</CardTitle>
                 <IconContainerDiv>
                     <IconContainer>
                         <PhoneIphoneOutlined />
@@ -146,11 +192,34 @@ class Propositions extends Component {
                     </IconContainer>
                 </IconContainerDiv>
                 <CardWords>
-                    Do you want an optimized last mile solution to introduce new and poor performing products? Do you want to hyper-up your Route to Market strategy? Do you want access to all markets, near and far?
+                    Transform your business and tap into an unsurpassed network that has Total control of last mile delivery and the perfect solution for high volume Route-to-Market with Strategic Sales Analytics. 
                 </CardWords>
-                <Button>Send</Button>
+                <Button>Talk to us about you needs</Button>
             </PropositionCard>
         </PropositionContainer>
+        <Figures>
+            <Into>
+                <IntoTitle>Figures</IntoTitle>
+                <IntoMessage>Our figures speak for themselves</IntoMessage>
+            </Into>
+            <PropositionContainer>
+                <FigureCard>
+                    <FactoryOutlined />
+                    <IntoMessage>19</IntoMessage>
+                    <IntoTitle>FMCG Manufacturers</IntoTitle>
+                </FigureCard>
+                <FigureCard>
+                    <CategoryOutlined />
+                    <IntoMessage>342</IntoMessage>
+                    <IntoTitle>Popular FMCG Brands</IntoTitle>
+                </FigureCard>
+                <FigureCard>
+                    <StoreOutlined />
+                    <IntoMessage>4201</IntoMessage>
+                    <IntoTitle>Retail and Wholesale Shops</IntoTitle>
+                </FigureCard>
+            </PropositionContainer>
+        </Figures>
       </Container>
     )
   }

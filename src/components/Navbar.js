@@ -39,6 +39,7 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-right: 30px;
 `;
 
 const MenuStyle = styled.div`

@@ -4,7 +4,6 @@ import Categories from '../components/Categories';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
-import ProductsAll from '../components/ProductsAll';
 import Propositions from '../components/Propositions';
 import Slider from '../components/Slider';
 
@@ -18,7 +17,6 @@ class Homepage extends Component {
         <Slider />
         <Propositions />
         <Categories />
-        <ProductsAll />
         <Newsletter />
         <Footer></Footer>
       </div>
