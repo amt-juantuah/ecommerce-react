@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Badge from "@mui/material/Badge";
-import { ShoppingCartOutlined, Search } from '@mui/icons-material';
+import { ShoppingCartOutlined } from '@mui/icons-material';
 
 
 const StyledNavbar = styled.div`
   height: 60px;
-  background-color: #393a34;
+  background-color: var(--color-brown);
   position: sticky;
   top: 0;
   z-index: 4;
@@ -68,36 +68,36 @@ const LanguageStyle = styled.span`
   font-size: 13px;
 `;
 
-const Input = styled.input`
-  border: none;
-  padding: 8px;
-  outline: none;
-  width: 90%;
-  border-radius: 0 8px 8px 0;
-  border-left: 2px solid #f1b604;
-  &::placeholder {
-    color: #393a34;
-  }
-`;
+// const Input = styled.input`
+//   border: none;
+//   padding: 8px;
+//   outline: none;
+//   width: 90%;
+//   border-radius: 0 8px 8px 0;
+//   border-left: 2px solid #f1b604;
+//   &::placeholder {
+//     color: var(--color-brown);
+//   }
+// `;
 
-const SearchContainer = styled.div`
-  border: 2px solid #f1b604;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  justify-content: space-around;
-  border-radius: 12px;
-  width: 100%;
-  height: 40px;
-  &:hover ${Input} {
-    background-color: #f1b604;
-  }
-`;
+// const SearchContainer = styled.div`
+//   border: 2px solid #f1b604;
+//   display: flex;
+//   align-items: center;
+//   padding: 5px;
+//   justify-content: space-around;
+//   border-radius: 12px;
+//   width: 100%;
+//   height: 40px;
+//   &:hover ${Input} {
+//     background-color: #f1b604;
+//   }
+// `;
 
-const Center = styled.div`
-  flex: 1;
-  text-align: center;
-`;
+// const Center = styled.div`
+//   flex: 1;
+//   text-align: center;
+// `;
 
 class Navbar extends Component {
   render() {
@@ -107,12 +107,6 @@ class Navbar extends Component {
           <Left> 
             <Logo>MegaTron</Logo>
           </Left>
-          <Center>
-            <SearchContainer>
-              <Search style={{fontSize: '18px', marginRight: "5px"}} />
-              <Input placeholder='Search for brand...'/>
-            </SearchContainer>
-          </Center>
           <Right>
             <MenuStyle>
               <MenuItem>Signup</MenuItem>

@@ -19,8 +19,8 @@ const ProductsAllContainer = styled.div`
 `;
 
 const Division = styled.div`
-    width: auto;
-    height: 200px;
+    width: 100vw;
+    height: auto;
     background-color: #e4c38d;
     border-top: 40px solid #007020;
     color: #007020;
@@ -28,10 +28,13 @@ const Division = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    padding: 30px 0;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+    text-align: center;
+    margin: 20px;
+`;
 
 const Free = styled.div`
     display: flex;
@@ -39,6 +42,7 @@ const Free = styled.div`
     gap: 10px;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 `;
 
 

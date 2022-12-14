@@ -7,9 +7,16 @@ import CategoryItem from './CategoryItem';
 const Container = styled.div`
 `;
 
+const Free = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 20px;
+`;
+
 const Division = styled.div`
-    width: auto;
-    height: 200px;
+    width: 100vw;
+    height: auto;
     background-color: #e4c38d;
     border-top: 40px solid #007020;
     color: #007020;
@@ -17,16 +24,22 @@ const Division = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    padding: 30px 0;
 `;
 
-const Title = styled.h1``;
-
-const Free = styled.div`
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+const Title = styled.h1`
+    text-align: center;
+    margin: 20px;
 `;
+
+// const Free = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     justify-content: center;
+//     align-items: center;
+//     margin: 20px;
+// `;
 
 const CategoryContainer = styled.div`
     display: flex;

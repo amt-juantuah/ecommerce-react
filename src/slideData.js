@@ -4,7 +4,7 @@ export const slideData = [
         img: 'https://www.gannett-cdn.com/presto/2021/12/30/PSAL/b3cafaad-581b-4372-b58c-b721014d58d8-Grocer_photo_1.jpg',
         title: 'You work too hard. Make your life easier...',
         description: 'Get all Sorts of Products in your Shop at NO Delivery fee',
-        bg: '#393a34',
+        bg: '#3c3c3c',
         lc: '#f1b604',
     },
     {

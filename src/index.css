@@ -4,6 +4,7 @@
   --color-orange: #f1b604;
   --color-blue: #939bf4;
   --color-btn-prim: #44cdef;
+  --color-brown: #3c3c3c;
 }
 
 * {
@@ -17,3 +18,7 @@ body {
   background-color: #eaeaea;
 }
 
+button,
+a {
+  cursor: pointer;
+}

@@ -3,18 +3,30 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const NewsContainer = styled.div`
-    height: 170px;
-    background-color: #393a34;
+    height: auto;
+    width: 100vw;
+    padding: 70px;
+    padding-right: 80px;
+    padding-left: 110px;
+    background-color: var(--color-brown);
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-flow: column;
-    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // gap: 20px;
     // position: relative;
+`;
+
+const Container = styled.div`
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+    justify-content: center;
 `;
 
 const Title = styled.h2`
     color: #f1b604;
+    margin-bottom: 20px;
 `;
 
 const Button = styled.button`
@@ -30,6 +42,7 @@ const Button = styled.button`
     border: none;
     outline: none;
     border-radius: 4px;
+    margin-bottom: 20px;
     &:hover {
         opacity: 0.7;
     }
@@ -155,6 +168,14 @@ const Checkbox = styled.input`
     width: 12px;
 `;
 
+const Logo = styled.h2`
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-orange);
+  width: 70px;
+  float: left;
+`;
+
 class Newsletter extends Component {
 
     constructor(props) {
@@ -235,12 +256,15 @@ class Newsletter extends Component {
                 </SendButtom>
             </Form>
         </NewsletterForm>
-        <NewsContainer>
-        <Title>Newsletter</Title>
-        <Button onClick={this.handleNewsletter}>
-            <Words>Sign up for our newsletter</Words>
-            <Send />
-        </Button>
+        <NewsContainer> 
+            <Logo>MegaTron</Logo> 
+            <Container>          
+                <Title>Newsletter</Title>
+                <Button onClick={this.handleNewsletter}>
+                    <Words>Sign up for our newsletter</Words>
+                    <Send />
+                </Button>
+            </Container>
         </NewsContainer>
       </div>
     )
