@@ -1,3 +1,4 @@
+import { FactoryOutlined, LocalShippingOutlined, PhoneIphoneOutlined, StoreOutlined } from '@mui/icons-material';
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
@@ -19,7 +20,7 @@ const IntoTitle = styled.h3`
 `;
 
 const IntoMessage = styled.h2`
-    font-weight: 600px;
+    font-size: 23px;
 `;
 
 
@@ -30,12 +31,13 @@ const PropositionContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     row-gap: 50px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    column-gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 `;
 
 const PropositionCard = styled.div`
-    max-width: 350px;
+    max-width: 320px;
     min-width: 300px;
     height: 400px;
     background-color: #fff;
@@ -43,16 +45,47 @@ const PropositionCard = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-between;
     border-radius: 6px;
+`;
+
+const IconContainer = styled.div`
+    width: 40px;
+    height: 40px;
+    background-color: #fafafa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // flex: 0.6;
+    margin-bottom: 40px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    & svg {
+        color: var(--color-orange);
+    };
+`;
+
+const IconContainerDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
 `;
 
 const CardTitle = styled.h2`
     color: var(--color-brown);
+    font-size: 20px;
+    flex: 1;
 `;
 
 const CardWords = styled.p`
     color: var(--color-brown);
+    flex: 3;
+    width: 100%;
+    text-align: center;
+    line-height: 25px;
+    font-size: 14.5px;
 `;
 
 const Button = styled.button`
@@ -63,6 +96,8 @@ const Button = styled.button`
     width: 90%;
     border: none;
     outline: none;
+    flex: 0.7;
+    font-size: 14px;
     border-radius: 4px;
     &:hover {
         opacity: 0.7;
@@ -76,22 +111,43 @@ class Propositions extends Component {
       <Container>
         <Into>
             <IntoTitle>Our Solution</IntoTitle>
-            <IntoMessage>Last Mile Master, Convenience to Retail and Wholesale shop Owners, High Volume Sales Cycle to FMCG Manufacturers</IntoMessage>
+            <IntoMessage>Last Mile Master, Democratizing High Volume Key Destribution for FMCG Manufacturers,</IntoMessage>
+            <IntoMessage>Convenient Product Sourcing for Retailers and Wholesalers</IntoMessage>
         </Into>
         <PropositionContainer>
             <PropositionCard>
-                <CardTitle>Boom</CardTitle>
-                <CardWords>fsdfsfsfsfssfsffs</CardWords>
-                <Button>Send</Button>
+                <CardTitle>FMCG Manufacturers</CardTitle>
+                <IconContainer>
+                    <FactoryOutlined />
+                </IconContainer>
+                <CardWords>
+                    Do you want an optimized last mile solution to introduce new and poor performing products? Do you want to hyper-up your Route to Market strategy? Do you want access to all markets, near and far? <br /> <b>Don't be left out. Be smart</b>
+                </CardWords>
+                <Button>Get Started</Button>
+            </PropositionCard>
+            <PropositionCard>
+                <CardTitle>Retailers & WholeSalers</CardTitle>
+                <IconContainer>
+                    <StoreOutlined />
+                </IconContainer>
+                <CardWords>
+                    Do you need a reliable supply of any product you want in your shop? Do you want the best prices? From the manufacturer, right to your Shop. That is exactly what you need to grow your business.<br /> <b>Delivery is free and the fastest</b> 
+                </CardWords>
+                <Button>Join and Grow</Button>
             </PropositionCard>
             <PropositionCard>
                 <CardTitle>Boom</CardTitle>
-                <CardWords>fsdfsfsfsfssfsffs</CardWords>
-                <Button>Send</Button>
-            </PropositionCard>
-            <PropositionCard>
-                <CardTitle>Boom</CardTitle>
-                <CardWords>fsdfsfsfsfssfsffs</CardWords>
+                <IconContainerDiv>
+                    <IconContainer>
+                        <PhoneIphoneOutlined />
+                    </IconContainer>
+                    <IconContainer>
+                        <LocalShippingOutlined />
+                    </IconContainer>
+                </IconContainerDiv>
+                <CardWords>
+                    Do you want an optimized last mile solution to introduce new and poor performing products? Do you want to hyper-up your Route to Market strategy? Do you want access to all markets, near and far?
+                </CardWords>
                 <Button>Send</Button>
             </PropositionCard>
         </PropositionContainer>
