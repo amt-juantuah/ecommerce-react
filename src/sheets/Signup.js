@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MailLockOutlined, LockOutlined, PersonOutlineOutlined, Send } from '@mui/icons-material';
+import { MailLockOutlined, StorefrontOutlined, LockOutlined, LocalShippingOutlined, PersonOutlineOutlined } from '@mui/icons-material';
 
 const Container = styled.div`
     display: flex;
@@ -35,14 +35,15 @@ const Words = styled.p`
 
 const FormContainer = styled.div`
     flex: 1;
-    height: 100%;
+    height: auto;
     overflow: auto;
     background-color: #fff;
     transition: all 0.5s ease;
     display: flex;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 50px;
     &::-webkit-scrollbar {
         display: none;
     }
@@ -51,7 +52,7 @@ const FormContainer = styled.div`
 const SideContainer = styled.div`
     flex: 1;
     height: 100%;
-    background-image: url("https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
+    background: linear-gradient(#00000080, #00000080), url("https://images.unsplash.com/photo-1578916171728-46686eac8d58?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
     background-color: var(--color-brown);
     background-position: top;
     background-size: cover;
@@ -67,7 +68,7 @@ const Form = styled.form`
     max-width: 400px;
     padding: 20px;
     display:flex;
-    margin: 80px 0;
+    margin: 0 0 50px 0;
     flex-flow: column;
 `;
 
@@ -151,16 +152,59 @@ const Logo = styled.h2`
   font-variant: unicase;
 `;
 
+const Select = styled.select`
+    height: 40px;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #f1b604;
+    outline: none;
+    color: #393a34;
+    letter-spacing: 2px;
+    &:focus {
+        outline: 1px solid #393a34;
+        border: none;
+    };
+
+    &:hover {
+        outline: 1px solid #393a34;
+        border: none;
+    };
+
+`;
+
+const Option = styled.option``;
+
+const Link = styled.a`
+    text-decoration: none;
+    font-size: 13px;
+    color: blue;
+    text-align: left;
+    margin-top: 12px;
+    margin-left: 12px;
+    transition: all 300ms ease;
+    &:hover {
+        color: var(--color-orange);
+    }
+`;
+
 class Signup extends Component {
   render() {
     return (
       <Container>
         <FormContainer>
+            <Logo>MegaTron</Logo>
             <Form>
-                <Logo>MegaTron</Logo>
                 <FormTitle>
                     Create an Account
                 </FormTitle>
+                <InputBox>
+                    <Label>
+                        <PersonOutlineOutlined />
+                        Full Name
+                        <Important>*</Important>
+                    </Label>
+                    <Input type="text" placeholder='eg. Mary Antonia' required />
+                </InputBox>
                 <InputBox>
                     <Label>
                         <MailLockOutlined /> E-Mail
@@ -170,37 +214,47 @@ class Signup extends Component {
                 </InputBox>
                 <InputBox>
                     <Label>
-                        <PersonOutlineOutlined />
-                        First Name
+                        <LockOutlined />
+                        Password
                         <Important>*</Important>
                     </Label>
-                    <Input type="text" placeholder='eg. Mary' required />
-                </InputBox>
+                    <Input type="password" placeholder='******' required />
+                </InputBox> 
                 <InputBox>
                     <Label>
-                        Last Name
+                        <LockOutlined />
+                        Confirm Password
                         <Important>*</Important>
                     </Label>
-                    <Input type="text" placeholder='eg. Enyonam' required />
-                </InputBox>
+                    <Input type="password" placeholder='******' required />
+                </InputBox>  
                 <InputBox>
                     <Label>
-                        Company or Organisation
+                        <LocalShippingOutlined />
+                        I represent a:
                         <Important>*</Important>
+                    </Label>
+                    <Select required>
+                        <Option selected disabled>Choose One</Option>
+                        <Option>Retail Shop</Option>
+                        <Option>Wholesale Shop</Option>
+                        <Option>FMCG Manufacturer/Producer</Option>
+                        <Option>FMCG Distributor</Option>
+                        <Option>Logistics Business</Option>
+                        <Option>Other</Option>
+                    </Select>
+                </InputBox>               
+                <InputBox>
+                    <Label>
+                        <StorefrontOutlined />
+                        Company or Shop Name
                     </Label>
                     <Input type="text" placeholder='eg. Hope Ventures' required />
-                </InputBox>
-                <InputBox>
-                    <Label>
-                        Your Job Title
-                        <Important></Important>
-                    </Label>
-                    <Input type="text" placeholder='eg. Owner, Director' />
                 </InputBox>
                 <Label>
                     <Checkbox type="checkbox" required/>
                     <Important>*</Important>
-                    <Span> I hereby consent to the data handling and processing policy of Megatron which relates with Newsletters </Span>
+                    <Span> By creating an account, I hereby consent to the data handling and processing policy of Megatron</Span>
                 </Label>
 
                 <Words style={{textAlign: "center", margin: "15px"}}>
@@ -208,11 +262,14 @@ class Signup extends Component {
                     Mandatory Field
                 </Words>
                 <SendButtom type='submit'>
-                <Words>Send</Words> <Send />
+                <Words>Register</Words>
                 </SendButtom>
+                <Link>Have an account? Login</Link>
+                <Link>Have an account? Login</Link>
             </Form>
         </FormContainer>
         <SideContainer>
+            <Logo>Join a Special Community of 6000+ members</Logo>
         </SideContainer>
       </Container>
     )

@@ -174,6 +174,7 @@ const Logo = styled.h2`
   color: var(--color-orange);
   width: 70px;
   float: left;
+  font-variant: unicase;
 `;
 
 class Newsletter extends Component {

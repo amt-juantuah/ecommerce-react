@@ -32,6 +32,7 @@ const Logo = styled.h2`
   cursor: pointer;
   color: var(--color-orange);
   width: 70px;
+  font-variant: unicase;
 `;
 
 const Right = styled.div`
