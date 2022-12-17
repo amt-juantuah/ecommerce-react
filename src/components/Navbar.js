@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Badge from "@mui/material/Badge";
 import { mobile } from '../responsive';
+import { categoryData } from '../slideData';
 import { KeyboardArrowDownRounded, KeyboardArrowRightRounded, ShoppingCartOutlined, CloseRounded, MenuOpenRounded } from '@mui/icons-material';
 
 
@@ -97,12 +98,16 @@ const ToggleIcons = styled.div`
 
 
 const MobileMenu = styled.div`
-  height: 50vh;
+  // height: 50vh;
+  height: auto;
+  max-height: 70vh;
+  overflow-y: auto;
   background-color: #fff;
   position: absolute;
   top: 52px;
+  padding-bottom: 40px;
   right: -3px;
-  transition: width 0.7s ease;
+  transition: width 0.7s ease, height 1s ease;
   width: ${props => props.width}vw;
   // width: 72vw;
   // display: ${props => props.display};
@@ -111,6 +116,7 @@ const MobileMenu = styled.div`
   align-items: center;
   border-top: 40px solid #eee;
   border-bottom: 40px solid var(--color-orange);
+  border-radius: 0 0 0 30px;
   & ${SignupMobile} {
     height: 40px;
     width: 70%;
@@ -155,6 +161,36 @@ const MobileMenu = styled.div`
     padding: 0 20px;
     color: red;
   }
+`;
+
+const Categories = styled.div`
+    width: 70%;
+    transition: all 0.5s ease;
+    height: auto;
+    padding: 10px 5px 10px 10px;
+    border: 2px solid #eee;
+    margin-top: 20px;
+`;
+
+const CategoryTitle = styled.h5`
+    transition: all 0.5s ease;
+    text-align: left;
+`;
+
+const CategoryItem = styled.div`
+    cursor: pointer;
+    height:30px;
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: #eee;
+    }
 `;
 
 // const LanguageStyle = styled.span`
@@ -209,9 +245,19 @@ class Navbar extends Component {
             <MenuOpenRounded style={{fill: "var(--color-orange)",display: this.state.openIcon, transition: "all 1s ease-out"}} onClick={this.handleMenuOpen} />
           </ToggleIcons>
           <MobileMenu width={this.state.mobileMenu}>
-            {this.state.mobileMenu && <><SignupMobile><span>Signup</span><KeyboardArrowRightRounded /></SignupMobile>
-            <LoginMobile><span>Login</span><KeyboardArrowRightRounded /></LoginMobile>
-            <LanguageMobile><span>ENG</span><KeyboardArrowDownRounded /></LanguageMobile></>}
+            {this.state.mobileMenu ? 
+            <>
+              <SignupMobile><span>Signup</span><KeyboardArrowRightRounded /></SignupMobile>
+              <LoginMobile><span>Login</span><KeyboardArrowRightRounded /></LoginMobile>
+              <LanguageMobile><span>ENG</span><KeyboardArrowDownRounded /></LanguageMobile>
+              <Categories>
+                <CategoryTitle>Product Categories</CategoryTitle>
+                { categoryData.map(data => (
+                  <CategoryItem>{data.cat}</CategoryItem>
+                ))}
+              </Categories>
+            </>
+            : ""}
           </MobileMenu>            
         </Wrapper>
       </StyledNavbar>
