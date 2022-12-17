@@ -99,15 +99,13 @@ const ToggleIcons = styled.div`
 
 const MobileMenu = styled.div`
   // height: 50vh;
-  height: auto;
-  max-height: 70vh;
-  overflow-y: auto;
+  height: 80vh;
   background-color: #fff;
   position: absolute;
   top: 52px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   right: -3px;
-  transition: width 0.7s ease, height 1s ease;
+  transition: width 0.4s ease;
   width: ${props => props.width}vw;
   // width: 72vw;
   // display: ${props => props.display};
@@ -166,15 +164,25 @@ const MobileMenu = styled.div`
 const Categories = styled.div`
     width: 70%;
     transition: all 0.5s ease;
-    height: auto;
+    min-height: 250px;
     padding: 10px 5px 10px 10px;
     border: 2px solid #eee;
     margin-top: 20px;
+    overflow-y: scroll;
+    position: relative;
 `;
 
-const CategoryTitle = styled.h5`
+const CategoryTitle = styled.div`
     transition: all 0.5s ease;
     text-align: left;
+    position: sticky;
+    top: 0;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background-color: #ffeed3;
+    font-weight: 600;
+    padding-left: 10px;
 `;
 
 const CategoryItem = styled.div`

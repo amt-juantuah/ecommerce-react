@@ -27,7 +27,7 @@ const BannerSlide = styled.div`
     display: flex;
     align-items: center;
     background-color: ${props => props.bg};
-    ${mobile({flexFlow:"column-reverse"})};
+    ${mobile({position: "relative"})};
 `;
 
 const BannerImage = styled.div`
@@ -37,22 +37,42 @@ const BannerImage = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    ${mobile({
+        flex: "0",
+        height: "200px",
+        width: "200px",
+        position: "absolute",
+        borderRadius: "10px",
+        top: "30%",
+        left: "24.5%",
+    })};
 `;
 
 const BannerInfo = styled.div`
     flex: 1;
     padding: 50px;
     color: ${props => props.lc};
+    ${mobile({
+        // flexFlow: "column",
+        // display: "flex",
+        position: "relative",
+        // alignItems: "start",
+        // paddingBottom: "15px",
+        alignSelf: "start"
+    })};
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+    ${mobile({fontSize: "19px"})}
+`;
 
 const Description = styled.p`
     margin: 50px 0;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 3px;
-    max-width: 300px; 
+    max-width: 300px;
+    ${mobile({letterSpacing: "1px"})}
 `;
 
 const Button = styled.button`
@@ -68,7 +88,8 @@ const Button = styled.button`
     transition: all 500ms;
     &: hover {
         opacity: 0.5;
-    }
+    };
+    ${mobile({marginTop: "212px", width: "100%"})}
 `;
 
 
