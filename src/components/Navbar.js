@@ -261,7 +261,7 @@ class Navbar extends Component {
               <Categories>
                 <CategoryTitle>Product Categories</CategoryTitle>
                 { categoryData.map(data => (
-                  <CategoryItem>{data.cat}</CategoryItem>
+                  <CategoryItem key={data.id}>{data.cat}</CategoryItem>
                 ))}
               </Categories>
             </>

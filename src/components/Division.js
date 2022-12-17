@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
+import { mobile } from '../responsive'; 
 
 
 const Container = styled.div``;
@@ -16,11 +17,17 @@ const DivisionContainer = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 30px 0;
+    ${mobile({borderTop: "20px solid #007020", padding: "15px 0"})}
 `;
 
 const Title = styled.h1`
     text-align: center;
     margin: 20px;
+    ${mobile({
+      fontSize: "20px",
+      textAlign: "center",
+      margin: "10px",
+  })}
 `;
 
 const Free = styled.div`
@@ -30,6 +37,10 @@ const Free = styled.div`
     justify-content: center;
     align-items: center;
     margin: 20px;
+    ${mobile({
+      textAlign: "center",
+      marginBottom: "10px",      
+    })}
 `;
 
 

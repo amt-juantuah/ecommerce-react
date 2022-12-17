@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive'; 
 
 const Container = styled.div`
     // flex: 1;
@@ -9,6 +10,11 @@ const Container = styled.div`
     border: 1px solid #ced4de;
     border-radius: 16px;
     background-color: #fff;
+    ${mobile({
+      width: "250px",
+      height: "300px",
+      borderRadius: "8px"
+    })}
 `;
 
 const Image = styled.div`
@@ -22,6 +28,10 @@ const Image = styled.div`
     z-index: 1;
     margin-right: auto;
     margin-left: auto;
+    ${mobile({
+      width: "200px",
+      height: "150px",
+    })}
 `;
 
 const Info = styled.div`
@@ -36,6 +46,10 @@ const Info = styled.div`
     align-items: center;
     justify-content: end;
     padding: 20px;
+    ${mobile({
+      padding: "10px",
+    })}
+    
 `;
 
 const InfoCard = styled.div`
@@ -52,16 +66,26 @@ const InfoCard = styled.div`
     &: hover button {
         color: #fff;
         background-color: #f1b604;
-    }
+    };
+    ${mobile({
+      height: "130px",
+      padding: "10px",
+    })}
 `;
 
 const Title = styled.h2`
     text-align: center;
+    ${mobile({
+      fontSize: "17px",
+    })}
 `;
 
 const Description = styled.p`
     text-align: center;
     font-size: 13px;
+    ${mobile({
+      fontSize: "12px",
+    })}
 `;
 
 const Button = styled.button`
@@ -78,7 +102,10 @@ const Button = styled.button`
       opacity: 0.7;
       color: #fff;
       border: 1px solid #06108d;
-    }
+    };
+    ${mobile({
+      width: "100%",
+    })}
 `;
 
 class CategoryItem extends Component {

@@ -1,6 +1,7 @@
 import { CancelScheduleSendTwoTone, Send } from '@mui/icons-material';
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const NewsContainer = styled.div`
     height: auto;
@@ -13,8 +14,9 @@ const NewsContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    // gap: 20px;
-    // position: relative;
+    ${mobile({
+        padding: "30px 10px",
+    })}
 `;
 
 const Container = styled.div`
@@ -45,7 +47,16 @@ const Button = styled.button`
     margin-bottom: 20px;
     &:hover {
         opacity: 0.7;
-    }
+    };
+    @media only screen and (max-width: 480px) {
+        & svg {
+            display: none;
+        }
+    };
+    ${mobile({
+        height: "50px",
+        width: "180px",
+    })}
 `;
 
 const SendButtom = styled.button`

@@ -133,7 +133,10 @@ const Figures = styled.div`
     };
     
     & ${PropositionContainer} {
-        ${mobile({marginBottom: "30px"})}
+        ${mobile({
+            marginBottom: "30px",
+            rowGap: "13px",
+        })}
     };
 
     ${mobile({
@@ -150,6 +153,7 @@ const FigureCard = styled.div`
     min-height: 120px;
     flex-flow: column;
     align-items: center;
+    transition: all 0.3s ease;
     justify-content: space-between;
     & svg {
         color: #fff;
@@ -157,10 +161,20 @@ const FigureCard = styled.div`
     & ${IntoMessage} {
         color: #fff;
         font-size: 40px;
+        ${mobile({fontSize: "24px"})}
     };
     & ${IntoTitle} {
         color: #fff;
-    }
+    };
+    @media only screen and (max-width: 480px) {
+        &:hover {
+            transform: scale(1.04);
+            & ${IntoMessage} {
+                color: var(--color-orange);
+            }
+        }
+    };
+    ${mobile({borderBottom: "2px solid #eee"})}
 `;
 
 
