@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { ArrowBackIosNewRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 import { slideData } from '../slideData';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     width: 100%;
@@ -26,6 +27,7 @@ const BannerSlide = styled.div`
     display: flex;
     align-items: center;
     background-color: ${props => props.bg};
+    ${mobile({flexFlow:"column-reverse"})};
 `;
 
 const BannerImage = styled.div`
@@ -89,7 +91,8 @@ const Arrow = styled.div`
     z-index: 2;
     &:hover {
         background-color: #fafafaba;
-    }
+    };
+    ${mobile({width: "30px", height: "30px"})};
 `;
 
 class Slider extends Component {

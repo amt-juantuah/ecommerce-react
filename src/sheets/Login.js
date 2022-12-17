@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MailLockOutlined, StorefrontOutlined, LockOutlined, LocalShippingOutlined, PersonOutlineOutlined } from '@mui/icons-material';
+import { MailLockOutlined, LockOutlined } from '@mui/icons-material';
 
 const Container = styled.div`
     display: flex;
@@ -153,6 +153,7 @@ const Link = styled.a`
         color: var(--color-orange);
     }
 `;
+
 class Signup extends Component {
   render() {
     return (

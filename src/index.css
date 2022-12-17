@@ -23,5 +23,7 @@ body {
 
 button,
 a {
+  font-family: 'Kumbh Sans', sans-serif;
   cursor: pointer;
+  letter-spacing: 1px;
 }

@@ -150,6 +150,7 @@ const Logo = styled.h2`
   font-size: 30px;
   margin: 30px 0;
   font-variant: unicase;
+  text-align: center;
 `;
 
 const Select = styled.select`
@@ -265,11 +266,10 @@ class Signup extends Component {
                 <Words>Register</Words>
                 </SendButtom>
                 <Link>Have an account? Login</Link>
-                <Link>Have an account? Login</Link>
             </Form>
         </FormContainer>
         <SideContainer>
-            <Logo>Join a Special Community of 6000+ members</Logo>
+            <Logo>Join a SPeciaL CommuniTY oF 6000+ memBers</Logo>
         </SideContainer>
       </Container>
     )
