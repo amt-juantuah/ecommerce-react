@@ -1,11 +1,13 @@
 import { CategoryOutlined, FactoryOutlined, VerifiedUserOutlined, LocalShippingOutlined, PhoneIphoneOutlined, StoreOutlined } from '@mui/icons-material';
 import React, { Component } from 'react'
+import { mobile } from '../responsive';
 import styled from 'styled-components';
 
 const Container = styled.div`
     padding: 60px 0 0 0;
     width: 100vw;
     height: auto;
+    ${mobile({padding: "50px 0px"})}
 `;
 
 const Into = styled.div`
@@ -14,14 +16,17 @@ const Into = styled.div`
     margin-bottom: 30px;
     color: var(--color-brown);
     margin-left: 50px;
+    ${mobile({maxWidth: "100%", margin: "0 20px 30px 20px"})}
 `;
 
 const IntoTitle = styled.h3`
     font-weight: 400;
+    ${mobile({marginBottom: "15px", color: "var(--color-orange)"})}
 `;
 
 const IntoMessage = styled.h2`
     font-size: 23px;
+    ${mobile({fontSize: "18px", lineHeight: "28px"})}
 `;
 
 
@@ -35,6 +40,7 @@ const PropositionContainer = styled.div`
     column-gap: 50px;
     margin-top: 50px;
     margin-bottom: 100px;
+    
 `;
 
 const PropositionCard = styled.div`
@@ -48,6 +54,11 @@ const PropositionCard = styled.div`
     align-items: center;
     // justify-content: space-between;
     border-radius: 6px;
+    transition: all 0.4s ease;
+    &:hover {
+        transform: scale(1.05);
+    }
+    ${mobile({maxWidth: "290px", minWidth: "280px", height: "430px"})}
 `;
 
 const IconContainer = styled.div`
@@ -78,6 +89,7 @@ const CardTitle = styled.h2`
     color: var(--color-brown);
     font-size: 20px;
     flex: 1;
+    ${mobile({fontSize: "18px", fontWeight: "600"})}
 `;
 
 const CardWords = styled.p`
@@ -115,7 +127,22 @@ const Figures = styled.div`
     padding-bottom: 30px;
     & ${Into} {
         color: #fff;
-    }
+        ${IntoTitle} {
+            ${mobile({color: "var(--color-orange)"})}
+        }
+    };
+    
+    & ${PropositionContainer} {
+        ${mobile({marginBottom: "30px"})}
+    };
+
+    ${mobile({
+        margin: "auto", 
+        width: "90vw", 
+        height: "auto", 
+        borderRadius: "10px",
+        padding: "15px",
+    })}
 `;
 
 const FigureCard = styled.div`
@@ -145,8 +172,7 @@ class Propositions extends Component {
       <Container>
         <Into>
             <IntoTitle>Our Solution</IntoTitle>
-            <IntoMessage>Last Mile Master, Democratizing High Volume Key Destribution for FMCG Manufacturers,</IntoMessage>
-            <IntoMessage>Convenient Product Sourcing for Retailers and Wholesalers</IntoMessage>
+            <IntoMessage>Last Mile Master, Democratizing High Volume Key Destribution for FMCG Manufacturers. Convenient Product Sourcing for Retailers and Wholesalers</IntoMessage>
         </Into>
         <PropositionContainer>
             <PropositionCard>
@@ -177,7 +203,7 @@ class Propositions extends Component {
                     </IconContainer>
                 </IconContainerDiv>
                 <CardWords>
-                    Your Brand and Company-specific execution standards are important to us. If it is standards in POS, mechandizing, branding, display, and sales KPIs <br /><br /><br/> <b>We have you covered</b> 
+                    Your Brand and Company-specific execution standards are important to us. If it is standards in POS, mechandizing, branding, display, and sales KPIs <br /><br /> <b>We have you covered</b> 
                 </CardWords>
                 <Button>Reach Out</Button>
             </PropositionCard>

@@ -27,7 +27,7 @@ const BannerSlide = styled.div`
     display: flex;
     align-items: center;
     background-color: ${props => props.bg};
-    ${mobile({position: "relative"})};
+    ${mobile({flexFlow: "column"})};
 `;
 
 const BannerImage = styled.div`
@@ -38,13 +38,12 @@ const BannerImage = styled.div`
     background-size: cover;
     background-position: center;
     ${mobile({
-        flex: "0",
-        height: "200px",
-        width: "200px",
-        position: "absolute",
-        borderRadius: "10px",
-        top: "30%",
-        left: "24.5%",
+        flex: "0.4",
+        width: "100vw",
+        // position: "absolute",
+        // borderRadius: "10px",
+        // top: "30%",
+        // left: "24.5%",
     })};
 `;
 
@@ -53,12 +52,9 @@ const BannerInfo = styled.div`
     padding: 50px;
     color: ${props => props.lc};
     ${mobile({
-        // flexFlow: "column",
-        // display: "flex",
-        position: "relative",
-        // alignItems: "start",
-        // paddingBottom: "15px",
-        alignSelf: "start"
+        padding: "65px",
+        flex: "0.6",
+        width: "100vw",
     })};
 `;
 
@@ -89,7 +85,7 @@ const Button = styled.button`
     &: hover {
         opacity: 0.5;
     };
-    ${mobile({marginTop: "212px", width: "100%"})}
+    ${mobile({ width: "100%"})}
 `;
 
 
@@ -104,8 +100,8 @@ const Arrow = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: ${props => props.direction === "left" && "30px"};
-    right: ${props => props.direction === "right" && "30px"};
+    left: ${props => props.direction === "left" && "20px"};
+    right: ${props => props.direction === "right" && "20px"};
     align-items: center;
     justify-content: center;
     margin: auto;
