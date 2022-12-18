@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Category from './sheets/Category';
 import Product from './sheets/Product';
@@ -11,7 +12,16 @@ import Cart from './sheets/Cart';
 function App() {
   return (
     <div className="App">
-      <Cart />
+      <Routes>
+          <Route path="/cheqout" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/new" element={<Signup />} />
+          <Route path="/all" element={<Products />} />
+          <Route path="/catg" element={<Category />} />
+          <Route path="/prod" element={<Product />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
+       </Routes>
     </div>
   );
 }

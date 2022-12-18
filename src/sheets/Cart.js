@@ -34,11 +34,13 @@ const FinalButton = styled.button`
     transition: all 300ms ease;
     height: 40px;
     background-color: var(--color-orange);
-    border: 2px solid var(--color-orange);
     border-radius: 5px;
+    border: none;
     &:hover {
         background-color: red;
         color: #fff;
+        opacity: 0.7;
+        border: 2px solid var(--color-orange);
     };
     ${mobile({
         width: "100%",  
@@ -91,7 +93,10 @@ const InitialButton = styled.button`
     &:hover {
         background-color: var(--color-orange);
     };
-    ${mobile({flex:"1"})}
+    ${mobile({
+        flex:"1",
+        marginLeft: "17px",
+    })}
 `;
 
 const Word = styled.div`
@@ -111,7 +116,11 @@ const WordText = styled.span`
     color: var(--color-blue);
     &:hover {
         color: var(--color-orange);
-    }
+    };
+    ${mobile({
+        fontSize: "12px",
+        marginBottom: "5px",
+    })}
 `;
 
 const Image = styled.div`
@@ -125,6 +134,7 @@ const Image = styled.div`
     // &:hover {
     //     transform: scale(1.1);
     // }
+    ${mobile({maxWidth: "100px", maxHeight: "100px"})}
 `;
 
 const Product = styled.div`
@@ -139,7 +149,8 @@ const Product = styled.div`
         & ${Image} {
             transform: scale(1.1);
         }
-    }
+    };
+    ${mobile({flexWrap:"nowrap"})}
 `;
 
 const ProductDetails = styled.div`
@@ -177,6 +188,7 @@ const Price = styled.h4`
     font-weight: 200;
     font-size: 20px;
     font-family: Georgia;
+    ${mobile({fontSize:"15px"})}
 `;
 
 const Details = styled.div`
@@ -184,6 +196,7 @@ const Details = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: space-around;
+    ${mobile({padding: "5px"})}
 
 `;
 const ProductName = styled.h5`
@@ -260,6 +273,654 @@ class Cart extends Component {
             </FirstSection>
             <SecondSection>
                 <Info>
+                <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
+                    <Product>
+                        <ProductDetails>
+                            <Image />
+                            <Details>
+                                <ProductName><b>Name: </b>Gino Tomato Paste</ProductName>
+                                <ProductDescription><b>SKU: </b>Box Carton</ProductDescription>
+                                <ProductDescription><b>Total Pieces: </b>12</ProductDescription>
+                            </Details>
+                        </ProductDetails>
+                        <PriceDetails>
+                            <ProductQuantity>
+                                <Add />
+                                <Quantity type="text" defaultValue="1" />
+                                <Remove />
+                            </ProductQuantity>
+                            <Price>GHS 17</Price>
+                        </PriceDetails>
+                    </Product>
                     <Product>
                         <ProductDetails>
                             <Image />
