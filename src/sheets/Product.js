@@ -21,15 +21,23 @@ const Image = styled.div`
     background-position: center;
     background-size: cover;
     flex: 1;
+    ${mobile({
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+    })}
 `;
+
 const Details = styled.div`
     flex: 1;
     height: 100%;
     padding: 8%;
+    ${mobile({alignSelf: "center"})}
 `;
+
 const Title = styled.h3`
     font-wreight: 200;
 `;
+
 const Description = styled.p`
     margin: 20px 0;
 `;
@@ -39,6 +47,9 @@ const Price = styled.span`
     font-size: 35px;
     display: flex;
     align-items: end;
+    ${mobile({
+        fontSize: "25px",
+    })}
 `;
 
 const Source = styled.p`
@@ -49,6 +60,9 @@ const Source = styled.p`
 
 const Package = styled.sub`
     font-size: 22px;
+    ${mobile({
+        fontSize: "15px",
+    })}
 `;
 
 const BuyContainer = styled.div`

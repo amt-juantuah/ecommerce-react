@@ -4,6 +4,7 @@ import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
 import { Add, Remove, ShoppingCartOutlined } from '@mui/icons-material';
 import Navbar from '../components/Navbar';
+import { mobile } from '../responsive';
 
 const Container = styled.div``;
 
@@ -11,13 +12,39 @@ const Wrapper = styled.div`
     padding: 20px 5vw;
     height: auto;
     width: 100vw;
+    ${mobile({
+        padding: "20px 5px",
+    })}
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
     font-weight: 300;
     text-align: center;
-    display: block;
+    display: flex;
     gap: 10px;
+    margin: auto;
+    width: fit-content;
+`;
+
+const FinalButton = styled.button`
+    display: block;
+    color: var(--color-brown);
+    text-transform: uppercase;
+    width: 150px;
+    transition: all 300ms ease;
+    height: 40px;
+    background-color: var(--color-orange);
+    border: 2px solid var(--color-orange);
+    border-radius: 5px;
+    &:hover {
+        background-color: red;
+        color: #fff;
+    };
+    ${mobile({
+        width: "100%",  
+        backgroundColor: "red",
+        color: "#fff",      
+    })}
 `;
 
 const FirstSection = styled.div`
@@ -25,6 +52,9 @@ const FirstSection = styled.div`
     align-items: center;
     justify-content: space-between;
     margin: 50px 0;
+    & ${FinalButton} {
+        ${mobile({display: "none"})}
+    }
 `;
 
 const SecondSection = styled.div`
@@ -38,6 +68,10 @@ const SecondSection = styled.div`
     border-radius: 16px;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    ${mobile({
+        border: "none",
+        flexFlow: "column-reverse",
+    })}
 `;
 
 const Info = styled.div`
@@ -56,13 +90,18 @@ const InitialButton = styled.button`
     transition: all 300ms ease;
     &:hover {
         background-color: var(--color-orange);
-    }
+    };
+    ${mobile({flex:"1"})}
 `;
 
 const Word = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    ${mobile({
+        flex:"1.5",
+        justifyContent: "end",
+    })}
 `;
 
 const WordText = styled.span`
@@ -72,22 +111,6 @@ const WordText = styled.span`
     color: var(--color-blue);
     &:hover {
         color: var(--color-orange);
-    }
-`;
-
-const FinalButton = styled.button`
-    display: block;
-    color: var(--color-brown);
-    text-transform: uppercase;
-    width: 150px;
-    transition: all 300ms ease;
-    height: 40px;
-    background-color: var(--color-orange);
-    border: 2px solid var(--color-orange);
-    border-radius: 5px;
-    &:hover {
-        background-color: red;
-        color: #fff;
     }
 `;
 
@@ -183,6 +206,10 @@ const Summary = styled.div`
     border-radius: 10px;
     position: sticky;
     top: 60px;
+    ${mobile({
+        width: "100%",
+        backgroundColor: "#eaeaea",
+    })}
 `;
 
 const SummaryTitle = styled.h5`

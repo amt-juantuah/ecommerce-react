@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { MailLockOutlined, LockOutlined } from '@mui/icons-material';
+import { mobile } from '../responsive';
+
 
 const Container = styled.div`
     display: flex;
     width: 100vw;
     height: 100vh;
+    ${mobile({flexFlow: "column-reverse"})}
 `;
 
 const SendButtom = styled.button`
@@ -46,7 +49,11 @@ const FormContainer = styled.div`
     padding-top: 50px;
     &::-webkit-scrollbar {
         display: none;
-    }
+    };
+    ${mobile({
+        flex: "3",
+        paddingTop: "0",
+    })}
 `;
 
 const SideContainer = styled.div`
@@ -60,6 +67,11 @@ const SideContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    ${mobile({
+        flex: "1",
+        padding: "18px",
+        backgroundPosition: "bottom",
+    })}
 `;
 
 const Form = styled.form`
@@ -70,6 +82,10 @@ const Form = styled.form`
     display:flex;
     margin: 0 0 50px 0;
     flex-flow: column;
+    ${mobile({
+        minWidth: "340px",
+        maxWidth: "350px",
+    })}
 `;
 
 const FormTitle = styled.h2`
@@ -192,7 +208,7 @@ class Signup extends Component {
             </Form>
         </FormContainer>
         <SideContainer>
-            <Logo>Welcome</Logo>
+            <Logo>WeLcome</Logo>
         </SideContainer>
       </Container>
     )
