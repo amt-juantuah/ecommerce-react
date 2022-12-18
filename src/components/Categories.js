@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { categoryData } from '../slideData';
@@ -42,7 +43,7 @@ class Categories extends Component {
               <CategoryItem det={item} key={item.id}/>
           ))}
         </CategoryContainer>
-        <Button>Load More</Button>
+        <Link to="/catg"><Button>Load More</Button></Link>
       </Container>
     )
   }

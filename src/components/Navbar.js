@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Badge from "@mui/material/Badge";
@@ -67,6 +68,7 @@ const MenuItem = styled.div`
   font-size: 13px;
   cursor: pointer;
   margin-left: 20px;
+  color: var(--color-orange);
   ${mobile({display: "none"})};
 `;
 
@@ -115,17 +117,21 @@ const MobileMenu = styled.div`
   border-top: 40px solid #eee;
   border-bottom: 40px solid var(--color-orange);
   border-radius: 0 0 0 30px;
+  // & a {
+  //   width: 70%;
+  //   margin: 5px;
+  // };
   & ${SignupMobile} {
     height: 40px;
     width: 70%;
+    margin: 5px;
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-brown);
     color: #fff;
-    border-radius: 4px;
-    margin: 5px;
+    border-radius: 4px;    
     padding: 0 20px;
     &:hover {
       opacity: 0.7;
@@ -134,14 +140,15 @@ const MobileMenu = styled.div`
   & ${LoginMobile} {
     height: 40px;
     width: 70%;
+    margin: 5px;
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
     background-color: var(--color-orange);
     border-radius: 4px;
-    margin: 5px;
     padding: 0 20px;
+    color: var(--color-brown);
     &:hover {
       opacity: 0.7;
     }
@@ -194,6 +201,7 @@ const CategoryItem = styled.div`
     margin-top: 10px;
     padding-left: 10px;
     display: flex;
+    color: var(--color-brown);
     align-items: center;
     transition: all 0.5s ease;
     &:hover {
@@ -234,17 +242,19 @@ class Navbar extends Component {
       <StyledNavbar>
         <Wrapper>
           <Left> 
-            <Logo>MegaTron</Logo>
+            <Link to="/"><Logo>MegaTron</Logo></Link>
           </Left>
           <Right>
             <MenuStyle>
-              <MenuItem>Signup</MenuItem>
-              <MenuItem>Login</MenuItem>
+            <Link to="/new"><MenuItem>Signup</MenuItem></Link>
+            <Link to="/login"><MenuItem>Login</MenuItem></Link>
+            <Link to="/cheqout">
               <CartItem>
                 <Badge badgeContent={4} color="primary">
                   <ShoppingCartOutlined style={{color: "#001"}}/>
                 </Badge>
               </CartItem>
+            </Link>
             </MenuStyle>
             <LanguageStyle>ENG</LanguageStyle>
           </Right>
@@ -255,13 +265,13 @@ class Navbar extends Component {
           <MobileMenu width={this.state.mobileMenu}>
             {this.state.mobileMenu ? 
             <>
-              <SignupMobile><span>Signup</span><KeyboardArrowRightRounded /></SignupMobile>
-              <LoginMobile><span>Login</span><KeyboardArrowRightRounded /></LoginMobile>
+              <Link to="/new"><SignupMobile><span>Signup</span><KeyboardArrowRightRounded /></SignupMobile></Link>
+              <Link to="/login"><LoginMobile><span>Login</span><KeyboardArrowRightRounded /></LoginMobile></Link>
               <LanguageMobile><span>ENG</span><KeyboardArrowDownRounded /></LanguageMobile>
               <Categories>
                 <CategoryTitle>Product Categories</CategoryTitle>
                 { categoryData.map(data => (
-                  <CategoryItem key={data.id}>{data.cat}</CategoryItem>
+                  <Link to="/all"><CategoryItem key={data.id}>{data.cat}</CategoryItem></Link>
                 ))}
               </Categories>
             </>

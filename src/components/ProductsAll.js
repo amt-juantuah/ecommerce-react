@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { categoryData } from '../slideData';
 import Product from './Product';
@@ -45,7 +46,7 @@ class ProductsAll extends Component {
               )
           }
         </ProductsAllContainer>
-        <Button>Load More</Button>
+        <Link to="/all"><Button>Load More</Button></Link>
       </Container>
     )
   }

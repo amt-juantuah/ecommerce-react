@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { MailLockOutlined, StorefrontOutlined, LockOutlined, LocalShippingOutlined, PersonOutlineOutlined } from '@mui/icons-material';
@@ -83,6 +84,19 @@ const Form = styled.form`
     display:flex;
     margin: 0 0 50px 0;
     flex-flow: column;
+    & a {
+        text-decoration: none;
+        font-size: 13px;
+        display: block;
+        color: blue;
+        text-align: left;
+        margin-top: 12px;
+        margin-left: 12px;
+        transition: all 300ms ease;
+        &:hover {
+            color: var(--color-orange);
+        }
+    }
     ${mobile({
         minWidth: "340px",
         maxWidth: "350px",
@@ -192,25 +206,25 @@ const Select = styled.select`
 
 const Option = styled.option``;
 
-const Link = styled.a`
-    text-decoration: none;
-    font-size: 13px;
-    color: blue;
-    text-align: left;
-    margin-top: 12px;
-    margin-left: 12px;
-    transition: all 300ms ease;
-    &:hover {
-        color: var(--color-orange);
-    }
-`;
+// const Linkit = styled.Link`
+//     text-decoration: none;
+//     font-size: 13px;
+//     color: blue;
+//     text-align: left;
+//     margin-top: 12px;
+//     margin-left: 12px;
+//     transition: all 300ms ease;
+//     &:hover {
+//         color: var(--color-orange);
+//     }
+// `;
 
 class Signup extends Component {
   render() {
     return (
       <Container>
         <FormContainer>
-            <Logo>MegaTron</Logo>
+            <Link to="/"><Logo>MegaTron</Logo></Link>
             <Form>
                 <FormTitle>
                     Create an Account
@@ -252,8 +266,8 @@ class Signup extends Component {
                         I represent a:
                         <Important>*</Important>
                     </Label>
-                    <Select required>
-                        <Option selected disabled>Choose One</Option>
+                    <Select defaultValue="*" required>
+                        <Option value="*" selected >Choose One</Option>
                         <Option>Retail Shop</Option>
                         <Option>Wholesale Shop</Option>
                         <Option>FMCG Manufacturer/Producer</Option>
@@ -282,7 +296,7 @@ class Signup extends Component {
                 <SendButtom type='submit'>
                 <Words>Register</Words>
                 </SendButtom>
-                <Link>Have an account? Login</Link>
+                <Link to="/login">Have an account? Login</Link>
             </Form>
         </FormContainer>
         <SideContainer>

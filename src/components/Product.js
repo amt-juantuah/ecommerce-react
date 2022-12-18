@@ -1,4 +1,5 @@
 import { FavoriteBorderOutlined, SearchOutlined, AddShoppingCartOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { mobile } from "../responsive";
@@ -87,13 +88,17 @@ const Words = styled.div`
     justify-self: start;
     position: absolute;
     width: 100%;
-    height: 45px;
+    min-height: 45px;
     padding: 10px;
 `;
 
-const Para = styled.p``;
-const Price = styled.h5`
+const Para = styled.p`
+    font-size: 13px;
+`;
+const Price = styled.p`
     font-family: 'Georgia';
+    font-size: 14px;
+    font-weight: 600;
 `;
 
 class Product extends Component {
@@ -103,9 +108,11 @@ class Product extends Component {
         <PiictureBack />
         <Image img={this.props.det.img} />
         <Info>
-            <Icon>
-                <AddShoppingCartOutlined />
-            </Icon>
+            <Link to="/prod">
+                <Icon>
+                  <AddShoppingCartOutlined />
+                </Icon>
+            </Link>
             <Icon>
                 <SearchOutlined />
             </Icon>

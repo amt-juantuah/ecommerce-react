@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { MailLockOutlined, LockOutlined } from '@mui/icons-material';
@@ -82,6 +83,19 @@ const Form = styled.form`
     display:flex;
     margin: 0 0 50px 0;
     flex-flow: column;
+    & a {
+        text-decoration: none;
+        font-size: 13px;
+        display: block;
+        color: blue;
+        text-align: left;
+        margin-top: 12px;
+        margin-left: 12px;
+        transition: all 300ms ease;
+        &:hover {
+            color: var(--color-orange);
+        }
+    }
     ${mobile({
         minWidth: "340px",
         maxWidth: "350px",
@@ -157,25 +171,25 @@ const Logo = styled.h2`
   font-variant: unicase;
 `;
 
-const Link = styled.a`
-    text-decoration: none;
-    font-size: 13px;
-    color: blue;
-    text-align: left;
-    margin-top: 12px;
-    margin-left: 12px;
-    transition: all 300ms ease;
-    &:hover {
-        color: var(--color-orange);
-    }
-`;
+// const Linkit = styled.Link`
+//     text-decoration: none;
+//     font-size: 13px;
+//     color: blue;
+//     text-align: left;
+//     margin-top: 12px;
+//     margin-left: 12px;
+//     transition: all 300ms ease;
+//     &:hover {
+//         color: var(--color-orange);
+//     }
+// `;
 
 class Signup extends Component {
   render() {
     return (
       <Container>
         <FormContainer>
-            <Logo>MegaTron</Logo>
+            <Link to="/"><Logo>MegaTron</Logo></Link>
             <Form>
                 <FormTitle>
                     Login
@@ -203,8 +217,8 @@ class Signup extends Component {
                 <SendButtom type='submit'>
                 <Words>Register</Words>
                 </SendButtom>
-                <Link>Forgot Password?</Link>
-                <Link>New here? Create an account</Link>
+                <Link to="*">Forgot Password?</Link>
+                <Link to="/new">New here? Create an account</Link>
             </Form>
         </FormContainer>
         <SideContainer>

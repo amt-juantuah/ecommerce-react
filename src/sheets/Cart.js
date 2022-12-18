@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
@@ -264,12 +265,12 @@ class Cart extends Component {
                 Items in your Cart 
             </Title>
             <FirstSection>
-                <InitialButton>Back to the Store</InitialButton>
+                <Link to="/all"><InitialButton>Back to the Store</InitialButton></Link>
                 <Word>
-                    <WordText>Cart Item Quantity (17)</WordText>
-                    <WordText>Items on Wishlist (1)</WordText>
+                    <Link to="/cheqout"><WordText>Cart Item Quantity (17)</WordText></Link>
+                    <Link to="/cheqout"><WordText>Items on Wishlist (1)</WordText></Link>
                 </Word>
-                <FinalButton>Checkout Now</FinalButton>
+                <Link to="/"><FinalButton>Checkout Now</FinalButton></Link>
             </FirstSection>
             <SecondSection>
                 <Info>
@@ -976,7 +977,7 @@ class Cart extends Component {
                         <SummaryName>TOTAL</SummaryName>
                         <SummaryTotal>GHS 16</SummaryTotal>
                     </SummaryItem>
-                    <FinalButton>CHECKOUT</FinalButton>
+                    <Link to="/"><FinalButton>CHECKOUT</FinalButton></Link>
                 </Summary>
             </SecondSection>
         </Wrapper>

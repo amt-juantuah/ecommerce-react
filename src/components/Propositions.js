@@ -1,4 +1,5 @@
 import { CategoryOutlined, FactoryOutlined, VerifiedUserOutlined, LocalShippingOutlined, PhoneIphoneOutlined, StoreOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 import { mobile } from '../responsive';
 import styled from 'styled-components';
@@ -55,6 +56,9 @@ const PropositionCard = styled.div`
     // justify-content: space-between;
     border-radius: 6px;
     transition: all 0.4s ease;
+    & a {
+        display: content;
+    }
     &:hover {
         transform: scale(1.05);
     }
@@ -102,8 +106,7 @@ const CardWords = styled.p`
 `;
 
 const Button = styled.button`
-    background-color: var(--color-orange);
-    color: #fff;
+    background-color: var(--color-orange);    
     display: block;
     height: 50px;
     width: 90%;
@@ -197,7 +200,7 @@ class Propositions extends Component {
                 <CardWords>
                     Do you want an optimized last mile solution to introduce new and poor performing products? Do you want to hyper-up your Route to Market strategy? Do you want access to all markets, near and far? <br /> <b>Don't be left out. Be smart</b>
                 </CardWords>
-                <Button>Get Started</Button>
+                <Link to="/Blank"><Button>Get Started</Button></Link>
             </PropositionCard>
             <PropositionCard>
                 <CardTitle>Retailers & WholeSalers</CardTitle>
@@ -207,7 +210,7 @@ class Propositions extends Component {
                 <CardWords>
                     Do you need a reliable supply of any product you want in your shop? Do you want the best prices? From the manufacturer, right to your Shop. That is exactly what you need to grow your business.<br /> <b>Delivery is free and the fastest</b> 
                 </CardWords>
-                <Button>Join and Grow</Button>
+                <Link to="/Blank"><Button>Join and Grow</Button></Link>
             </PropositionCard>
             <PropositionCard>
                 <CardTitle>Brand Standards Execution</CardTitle>
@@ -219,7 +222,7 @@ class Propositions extends Component {
                 <CardWords>
                     Your Brand and Company-specific execution standards are important to us. If it is standards in POS, mechandizing, branding, display, and sales KPIs <br /><br /> <b>We have you covered</b> 
                 </CardWords>
-                <Button>Reach Out</Button>
+                <Link to="/Blank"><Button>Reach Out</Button></Link>
             </PropositionCard>
             <PropositionCard>
                 <CardTitle>Last Mile Master, Technology</CardTitle>
@@ -234,7 +237,7 @@ class Propositions extends Component {
                 <CardWords>
                     Transform your business and tap into an unsurpassed network that has Total control of last mile delivery and the perfect solution for high volume Route-to-Market with Strategic Sales Analytics. 
                 </CardWords>
-                <Button>Talk to us about you needs</Button>
+                <Link to="/Blank"><Button>Talk to us about you needs</Button></Link>
             </PropositionCard>
         </PropositionContainer>
         <Figures>

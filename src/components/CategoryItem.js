@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { mobile } from '../responsive'; 
@@ -97,7 +98,7 @@ const Button = styled.button`
     border-radius: 4px;
     border: none;
     cursor: pointer;
-    transition: all 500ms;
+    transition: all 500ms;    
     &:hover {
       opacity: 0.7;
       color: #fff;
@@ -117,7 +118,7 @@ class CategoryItem extends Component {
             <InfoCard>
                 <Title>{this.props.det.cat}</Title>
                 <Description>{this.props.det.description}</Description>
-                <Button>Enter for Products</Button>
+                <Link to="/all"><Button>Enter for Products</Button></Link>
             </InfoCard>
         </Info>
       </Container>
@@ -126,9 +127,3 @@ class CategoryItem extends Component {
 }
 export default CategoryItem;
 
-// {
-//     id: 8,
-//     img: "https://i0.wp.com/mrpocu.com/wp-content/uploads/2022/10/supermarket-shelves.webp?fit=1170%2C754&ssl=1",
-//     cat: "Others",
-//     description: "Find all other Products in this section"
-// },

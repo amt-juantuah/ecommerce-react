@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { ArrowBackIosNewRounded, ArrowForwardIosRounded } from '@mui/icons-material';
@@ -159,7 +160,7 @@ class Slider extends Component {
                             <BannerInfo lc={item.lc}>
                                 <Title>{item.title}</Title>
                                 <Description>{item.description}</Description>
-                                <Button bg={item.bg} lc={item.lc}>Order Now</Button>
+                                <Link to="/all"><Button bg={item.bg} lc={item.lc}>Order Now</Button></Link>
                             </BannerInfo>
                         </BannerSlide>
                     ))

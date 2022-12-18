@@ -7,6 +7,7 @@ import Homepage from './sheets/Homepage';
 import Signup from './sheets/Signup';
 import Login from './sheets/Login';
 import Cart from './sheets/Cart';
+import Blank from './sheets/Blank.js';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/prod" element={<Product />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/" element={<Homepage />} />
+          <Route path="*" element={<Blank />} />
        </Routes>
     </div>
   );

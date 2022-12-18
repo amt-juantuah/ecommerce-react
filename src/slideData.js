@@ -9,7 +9,7 @@ export const slideData = [
     },
     {
         id: 1,
-        img: 'https://img.freepik.com/premium-photo/happy-african-woman-traditional-clothes-veil-looking-product-grocery-store-shopping-supermarket-afro-black-women-costumer-with-basket-buying-food-market_151355-6597.jpg?w=2000',
+        img: 'https://media.istockphoto.com/id/1349969156/photo/african-woman-taking-milk-from-shelf-shopping-groceries-in-supermarket.jpg?b=1&s=170667a&w=0&k=20&c=lzDCn9G_L6rcm-5AVjkHRsvbjXraGIDCOw1eTm1cv3I=',
         title: 'Make your customers happy',
         description: 'Imagine them smiling because you have all they need in your shop',
         bg: '#e5bc4f',

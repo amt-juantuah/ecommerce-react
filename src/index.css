@@ -21,9 +21,15 @@ body {
   overflow-x: hidden;
 }
 
-button,
-a {
+button {
   font-family: 'Kumbh Sans', sans-serif;
   cursor: pointer;
   letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Kumbh Sans', sans-serif;
+  cursor: pointer;
+  display: contents;
 }
