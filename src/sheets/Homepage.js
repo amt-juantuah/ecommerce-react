@@ -8,14 +8,16 @@ import Newsletter from '../components/Newsletter';
 import Propositions from '../components/Propositions';
 import Slider from '../components/Slider';
 import Division from '../components/Division';
+import styled from 'styled-components';
 
+const Container = styled.div``;
 
 class Homepage extends Component {
   render() {
     const icons = [<LocalShippingRounded />, <StoreTwoTone />, "DELIVERY IS FREE... yeah we love you too!"];
 
     return (
-      <div>
+      <Container>
         <Announcement />
         <Navbar />
         <Slider />
@@ -26,8 +28,8 @@ class Homepage extends Component {
         />
         <Categories />
         <Newsletter />
-        <Footer></Footer>
-      </div>
+        <Footer />
+      </Container>
     )
   }
 }

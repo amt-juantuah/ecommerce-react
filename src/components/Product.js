@@ -1,7 +1,7 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { FavoriteBorderOutlined, SearchOutlined, AddShoppingCartOutlined } from '@mui/icons-material';
 import React, { Component } from 'react'
 import styled from 'styled-components';
-
+import { mobile } from "../responsive";
 
 const Info = styled.div`
     background-color: #d6dff0a8;
@@ -32,7 +32,11 @@ const Container = styled.div`
     position: relative;
     &:hover ${Info} {
       opacity: 1;
-    }
+    };
+    ${mobile({
+      width: "150px",
+      height: "200px",
+    })}
 `;
 
 const PiictureBack = styled.div`
@@ -41,6 +45,10 @@ const PiictureBack = styled.div`
     height: 150px;
     position: absolute;
     z-index: 0;
+    ${mobile({
+      width: "100px",
+      height: "100px",
+    })}
 `;
 
 const Image = styled.div`
@@ -50,7 +58,11 @@ const Image = styled.div`
     background-repeat: no-repeat;
     width: 200px;
     height: 250px;
-    z-index: 1
+    z-index: 1;
+    ${mobile({
+      width: "150px",
+      height: "200px",
+    })}
 `;
 
 const Icon = styled.div`
@@ -70,6 +82,20 @@ const Icon = styled.div`
     }
 `;
 
+const Words = styled.div`
+    align-self: end;
+    justify-self: start;
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+`;
+
+const Para = styled.p``;
+const Price = styled.h5`
+    font-family: 'Georgia';
+`;
+
 class Product extends Component {
   render() {
     return (
@@ -78,7 +104,7 @@ class Product extends Component {
         <Image img={this.props.det.img} />
         <Info>
             <Icon>
-                <ShoppingCartOutlined />
+                <AddShoppingCartOutlined />
             </Icon>
             <Icon>
                 <SearchOutlined />
@@ -86,6 +112,10 @@ class Product extends Component {
             <Icon>
                 <FavoriteBorderOutlined />
             </Icon>
+            <Words>
+              <Para>{this.props.det.title}</Para>
+              <Price>{ this.props.det.price } per Carton</Price>
+            </Words>
         </Info>
       </Container>
     )

@@ -14,10 +14,23 @@ const ProductsAllContainer = styled.div`
     padding: 10px;
     gap: 20px;
     padding: 50px;
-    background-color: #d4dbdb;
     overflow: hidden;
 `;
 
+const Button = styled.button`
+  display: block;
+  height: 40px;
+  width: 120px;
+  margin: auto;
+  margin-bottom: 50px;
+  background-color: #ecd6b1;
+  border-radius: 5px;
+  border: 1px solid var(--color-orange);
+  outline: none;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
 
 class ProductsAll extends Component {
   render() {
@@ -32,6 +45,7 @@ class ProductsAll extends Component {
               )
           }
         </ProductsAllContainer>
+        <Button>Load More</Button>
       </Container>
     )
   }

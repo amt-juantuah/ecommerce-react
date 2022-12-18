@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
 import { Add, Remove } from '@mui/icons-material';
+import { mobile } from "../responsive";
+
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -11,6 +13,7 @@ const Wrapper = styled.div`
     display: flex;
     width: 100vw;
     height: 90vh;
+    ${mobile({flexFlow: "column"})}
 `;
 const Image = styled.div`
     background-image: url(${props => props.img});
@@ -62,15 +65,25 @@ const AmountContainer = styled.div`
     font-weight: 700;
 `;
 
-const Amount = styled.span`
-    width: 60px;
-    height: 40px;
-    border-radius: 5px;
+// const Amount = styled.span`
+//     width: 60px;
+//     height: 40px;
+//     border-radius: 5px;
+//     border: 1px solid var(--color-orange);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin: 0 4px;
+// `;
+
+const Quantity = styled.input`
+    font-size: 15px;
+    max-width: 41px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 3px;
     border: 1px solid var(--color-orange);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 4px;
+    text-align: center;
 `;
 
 const Button = styled.button`
@@ -106,7 +119,7 @@ class Product extends Component {
                 <BuyContainer>
                     <AmountContainer>
                         <Remove />
-                        <Amount>1</Amount>
+                        <Quantity type="text" defaultValue="1" />
                         <Add />
                     </AmountContainer>                    
                 </BuyContainer>

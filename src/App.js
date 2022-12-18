@@ -11,7 +11,7 @@ import Cart from './sheets/Cart';
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <Product />
     </div>
   );
 }

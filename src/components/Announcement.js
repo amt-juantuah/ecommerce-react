@@ -16,7 +16,7 @@ class Announcement extends Component {
   render() {
     return (
         <Container>
-            Announcement
+            No Announcements Currently
         </Container>
     );
   }

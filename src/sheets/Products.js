@@ -4,31 +4,52 @@ import Announcement from '../components/Announcement';
 import ProductsAll from '../components/ProductsAll';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { mobile } from '../responsive';
+
 
 const Container = styled.div``;
 
-const Title = styled.h1`
+const Title = styled.h2`
   margin: 50px;
+  ${mobile({marginBottom: "20px", textAlign: "center"})}
 `;
 
 const FiltContain = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  ${mobile({
+    display: "grid",
+    justifyContent: "stretch",
+  })}
+  
 `;
 
 const Filt = styled.div`
   margin: 50px;
+  ${mobile({
+    margin: "20px", 
+    display: "grid", 
+    alignItems: "end",
+  })}
 `;
 
 const FiltText = styled.span`
   font-size: 20px;
   font-weight: 600;
   margin-right: 10px;
+  ${mobile({fontSize: "15px"})}
 `;
 
 const Select = styled.select`
   padding: 10px;
   margin-right: 10px;
+  background-color: #eee;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  ${mobile({marginBottom: "10px"})}
 `;
 
 const Option = styled.option`
@@ -36,7 +57,7 @@ const Option = styled.option`
   margin-bottom: 3px;
 `;
 
-class Category extends Component {
+class Products extends Component {
   render() {
     return (
       <Container>
@@ -90,4 +111,4 @@ class Category extends Component {
   }
 }
 
-export default Category;
+export default Products;

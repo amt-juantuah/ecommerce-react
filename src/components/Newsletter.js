@@ -29,6 +29,9 @@ const Container = styled.div`
 const Title = styled.h2`
     color: #f1b604;
     margin-bottom: 20px;
+    ${mobile({
+        fontSize: "17px"
+    })}
 `;
 
 const Button = styled.button`
@@ -49,6 +52,9 @@ const Button = styled.button`
         opacity: 0.7;
     };
     @media only screen and (max-width: 480px) {
+        &:hover {
+            border: 1px solid var(--color-orange)
+        };
         & svg {
             display: none;
         }
@@ -56,6 +62,8 @@ const Button = styled.button`
     ${mobile({
         height: "50px",
         width: "180px",
+        backgroundColor: "var(--color-brown)",
+        border: "1px solid #fff"
     })}
 `;
 

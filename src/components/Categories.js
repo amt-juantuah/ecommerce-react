@@ -19,6 +19,20 @@ const CategoryContainer = styled.div`
     })}
 `;
 
+const Button = styled.button`
+  display: block;
+  height: 40px;
+  width: 120px;
+  margin: 50px auto;
+  background-color: #ecd6b1;
+  border-radius: 5px;
+  border: 1px solid var(--color-orange);
+  outline: none;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 class Categories extends Component {
   render() {
     return (
@@ -28,6 +42,7 @@ class Categories extends Component {
               <CategoryItem det={item} key={item.id}/>
           ))}
         </CategoryContainer>
+        <Button>Load More</Button>
       </Container>
     )
   }
