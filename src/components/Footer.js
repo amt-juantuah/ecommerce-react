@@ -26,7 +26,7 @@ const FootBox = styled.ul`
 
 const FootCard = styled.li`
     margin-bottom: 32px;
-    width: 180px;
+    width: 210px;
     ${mobile({
         width: "220px",
         marginBottom: "35px"
@@ -73,7 +73,8 @@ const List = styled.li`
     & a {
         color: var(--color-blue);
         text-decoration: none;
-        margin-left: 15px;
+        margin-left: 5px;
+        display: block;
     }
 `;
 
@@ -90,7 +91,7 @@ class Footer extends Component {
       <Container>
         <FooterContainer>
             <FootBox>
-                <FootCard>
+                <FootCard style={{width: "300px"}}>
                     <Title>Get in touch</Title>
                     <ListContent>
                         <List>Email: <a href='mailto:info@megatron.com' rel="noreferrer" target='_blank' >info@megatron.com</a></List>

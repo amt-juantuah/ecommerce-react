@@ -6,7 +6,7 @@ import { slideData } from '../slideData';
 import { mobile } from '../responsive';
 
 const Container = styled.div`
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -101,8 +101,8 @@ const Arrow = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: ${props => props.direction === "left" && "20px"};
-    right: ${props => props.direction === "right" && "20px"};
+    left: ${props => props.direction === "left" && "25px"};
+    right: ${props => props.direction === "right" && "25px"};
     align-items: center;
     justify-content: center;
     margin: auto;

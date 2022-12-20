@@ -15,7 +15,7 @@ const NewsContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     ${mobile({
-        padding: "30px 10px",
+        padding: "30px 30px",
     })}
 `;
 
@@ -40,14 +40,18 @@ const Button = styled.button`
     display: flex;
     flex-direction: row;
     height: 40px;
-    width: 250px;
-    padding: 15px;
+    width: 200px;
+    padding: 10px;
     justify-content: space-evenly;
     align-items: center;
     border: none;
     outline: none;
     border-radius: 4px;
     margin-bottom: 20px;
+    & p {
+        font-size: 12px;
+        font-weight: 200;
+    };
     &:hover {
         opacity: 0.7;
     };
@@ -61,9 +65,10 @@ const Button = styled.button`
     };
     ${mobile({
         height: "50px",
-        width: "180px",
+        width: "120px",
         backgroundColor: "var(--color-brown)",
-        border: "1px solid #fff"
+        border: "1px solid #fff",
+        fontSize: "12px",
     })}
 `;
 

@@ -37,6 +37,7 @@ const Logo = styled.h2`
   cursor: pointer;
   color: var(--color-orange);
   font-variant: unicase;
+  width: 100px;
 `;
 
 const Right = styled.div`
@@ -47,6 +48,14 @@ const Right = styled.div`
   padding-right: 30px;
   position: relative;
   ${mobile({textAlign: "center", flex: "0.3", paddingRight: "15px"})};
+`;
+
+const MenuItem = styled.div`
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 20px;
+  color: var(--color-orange);
+  ${mobile({display: "none"})};
 `;
 
 const MenuStyle = styled.div`
@@ -60,16 +69,15 @@ const MenuStyle = styled.div`
   &:hover {
     background-color: #f1b604;
     color: #fff;
+    & ${MenuItem} {
+      color: #fff;
+      &:hover {
+        color: red;
+        text-decoration: underline;
+      }
+    }
   };
   ${mobile({height: "30px", border: "none"})};
-`;
-
-const MenuItem = styled.div`
-  font-size: 13px;
-  cursor: pointer;
-  margin-left: 20px;
-  color: var(--color-orange);
-  ${mobile({display: "none"})};
 `;
 
 const CartItem = styled.div`
@@ -94,7 +102,7 @@ const ToggleIcons = styled.div`
   padding: 2px;
   display: none;
   margin-right: 10px;
-  & svg {font-size: 28px;};
+  & svg {font-size: 40px;};
   ${mobile({display: "flex"})};
 `;
 
@@ -246,15 +254,15 @@ class Navbar extends Component {
           </Left>
           <Right>
             <MenuStyle>
-            <Link to="/new"><MenuItem>Signup</MenuItem></Link>
-            <Link to="/login"><MenuItem>Login</MenuItem></Link>
-            <Link to="/cheqout">
-              <CartItem>
-                <Badge badgeContent={4} color="primary">
-                  <ShoppingCartOutlined style={{color: "#001"}}/>
-                </Badge>
-              </CartItem>
-            </Link>
+              <Link to="/new"><MenuItem>Signup</MenuItem></Link>
+              <Link to="/login"><MenuItem>Login</MenuItem></Link>
+              <Link to="/cheqout">
+                <CartItem>
+                  <Badge badgeContent={4} color="primary">
+                    <ShoppingCartOutlined style={{color: "#001"}}/>
+                  </Badge>
+                </CartItem>
+              </Link>
             </MenuStyle>
             <LanguageStyle>ENG</LanguageStyle>
           </Right>
