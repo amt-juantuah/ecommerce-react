@@ -45,7 +45,7 @@ export const categoryData = [
     {
         id: 0,
         img: "https://marketexpress.com.gh/2103-large_default/ovaltine-400g.jpg",
-        cat: "Canned Foods",
+        cat: "canned_foods",
         description: "All canned products from the best brands around the world",
         products: [
             {
@@ -65,7 +65,7 @@ export const categoryData = [
     {
         id: 1,
         img: "https://melcom.com/media/catalog/product/cache/d0e1b0d5c74d14bfa9f7dd43ec52d082/x/7/x741a_2.jpg",
-        cat: "Satchet Foods",
+        cat: "satchet_foods",
         description: "The Best food Brands in Satchets",
         products: [
             {
@@ -85,7 +85,7 @@ export const categoryData = [
     {
         id: 2,
         img: "https://www.ghanayello.com/img/gh/a/1584985326-63-fan-milk-limited.jpg",
-        cat: "Frozen Creams",
+        cat: "frozen_creams",
         description: "Ice cream, frozen dairy food made from cream or butterfat, milk, sugar, and flavourings",
         products: [
             {
@@ -105,7 +105,7 @@ export const categoryData = [
     {
         id: 3,
         img: "https://cdn1.yopongoelhielo.com/4084-thickbox_default/coca-cola-original.jpg",
-        cat: "Beverages and Water",
+        cat: "beverages_water",
         description: "All quality beverage in Ghana",
         products: [
             {
@@ -125,7 +125,7 @@ export const categoryData = [
     {
         id: 4,
         img: "https://palacesuperstores.com/media/catalog/product/cache/16b45c4df23e7cbb6056268614384533/8/0/800109075799.jpg",
-        cat: "Cleaners",
+        cat: "cleaners",
         description: "Leading brands of detergents and washing powders",
         products: [
             {
@@ -145,7 +145,7 @@ export const categoryData = [
     {
         id: 5,
         img: "https://www.contenthubext.kimberly-clark.com/ePIM/ImageStore/public/202275539_m.jpg",
-        cat: "Paper Goods",
+        cat: "paper_goods",
         description: "The most absorbent tissues with superior wiping and cleaning properties.",
         products: [
             {
@@ -165,7 +165,7 @@ export const categoryData = [
     {
         id: 6,
         img: "https://preview.redd.it/qyu0dvq90ib91.jpg?width=960&crop=smart&auto=webp&s=199bf05764ba856411b06dc922cfe9904baf9e95",
-        cat: "Personal Care",
+        cat: "personal_care",
         description: "Products for Positive Beauty, Healthy Lifestyles, and Personal Care",
         products: [
             {
@@ -185,7 +185,7 @@ export const categoryData = [
     {
         id: 7,
         img: "https://www.cussonsbaby.com.gh/wp-content/uploads/2020/05/05-CB-MG-Wipes-600x600.png",
-        cat: "Baby and Elderly Items",
+        cat: "baby_and_elderly_tems",
         description: "All baby and elderly care products",
         products: [
             {
@@ -205,7 +205,7 @@ export const categoryData = [
     {
         id: 8,
         img: "https://i5.walmartimages.com/asr/2662af04-3059-461e-9c51-145f0ace6929.bfff8b26cf16e6953bc71a1b14c3aa49.jpeg",
-        cat: "Others",
+        cat: "others",
         description: "Find all other Products in this section",
         products: [
             {

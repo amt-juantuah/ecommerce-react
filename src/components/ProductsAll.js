@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { categoryData } from '../slideData';
 import Product from './Product';
+import axios from 'axios';
 
 const Container = styled.div``;
 
@@ -33,23 +34,35 @@ const Button = styled.button`
   }
 `;
 
-class ProductsAll extends Component {
-  render() {
+const ProductsAll = (cat, sort) => {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProds = async () => {
+      try {
+        const res = await axios.get(cat ? `http://localhost:5005/product?category=${cat.cat}` : "http://localhost:5005/product");
+        setProducts(res.data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProds();
+  }, [cat])
+
+
     return (
       <Container>
         <ProductsAllContainer>
-          { categoryData.map(item => 
-              (item.products.map(product => 
+          { 
+              products.map(product => 
                   <Product det={product} key={product.id}/>
-                  )
-              )
-              )
+                  )        
           }
         </ProductsAllContainer>
-        <Link to="/all"><Button>Load More</Button></Link>
+        <Link to="/products"><Button>Load More</Button></Link>
       </Container>
     )
-  }
 }
 
 export default ProductsAll;

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Category from './sheets/Category';
 import Product from './sheets/Product';
@@ -11,13 +11,14 @@ import Blank from './sheets/Blank.js';
 
 
 function App() {
+  const user = true;
   return (
     <div className="App">
       <Routes>
           <Route path="/cheqout" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/new" element={<Signup />} />
-          <Route path="/all" element={<Products />} />
+          <Route path="/login" element={user? <Navigate to="/" /> : <Login />} />
+          <Route path="/new" element={user? <Navigate to="/" /> : <Signup />} />
+          <Route path="/products/:category" element={<Products />} />
           <Route path="/catg" element={<Category />} />
           <Route path="/prod" element={<Product />} />
           <Route path="/home" element={<Homepage />} />

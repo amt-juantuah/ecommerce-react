@@ -118,7 +118,7 @@ class CategoryItem extends Component {
             <InfoCard>
                 <Title>{this.props.det.cat}</Title>
                 <Description>{this.props.det.description}</Description>
-                <Link to="/all"><Button>Enter for Products</Button></Link>
+                <Link to={`/products/${this.props.det.cat}`}><Button>Enter for Products</Button></Link>
             </InfoCard>
         </Info>
       </Container>

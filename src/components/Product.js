@@ -101,12 +101,11 @@ const Price = styled.p`
     font-weight: 600;
 `;
 
-class Product extends Component {
-  render() {
+const Product = (det) => {
     return (
       <Container>
         <PiictureBack />
-        <Image img={this.props.det.img} />
+        <Image img={det.det.img} />
         <Info>
             <Link to="/prod">
                 <Icon>
@@ -120,13 +119,14 @@ class Product extends Component {
                 <FavoriteBorderOutlined />
             </Icon>
             <Words>
-              <Para>{this.props.det.title}</Para>
-              <Price>{ this.props.det.price } per Carton</Price>
+              <Para>{det.det.title}</Para>
+              <Price>{ det.det.unitprice } per {det.det.sku}</Price>
+              <Para>{det.det.skuquantity} pieces in a {det.det.sku}</Para>
+              <Para>{det.det.volumeperpiece}</Para>
             </Words>
         </Info>
       </Container>
     )
-  }
 }
 
 export default Product;
