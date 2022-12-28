@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 import { MailLockOutlined, LockOutlined } from '@mui/icons-material';
 import { mobile } from '../responsive';
+import { useDispatch } from "react-redux";
+import { login } from '../redux/apiCalls';
 
 
 const Container = styled.div`
@@ -184,8 +186,18 @@ const Logo = styled.h2`
 //     }
 // `;
 
-class Signup extends Component {
-  render() {
+const Login = () => {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const dispatch = useDispatch()
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        login(dispatch, {username, password});
+    }
+
     return (
       <Container>
         <FormContainer>
@@ -196,10 +208,10 @@ class Signup extends Component {
                 </FormTitle>
                 <InputBox>
                     <Label>
-                        <MailLockOutlined /> E-Mail
+                        <MailLockOutlined /> Username
                         <Important>*</Important>
                     </Label>
-                    <Input type="email" placeholder='eg. megatron@example.com' required />
+                    <Input minLength="5" maxLength="12" type="text" placeholder='eg. megatron' required value={username} onChange={(e) => setUsername(e.target.value)}/>
                 </InputBox>
                 <InputBox>
                     <Label>
@@ -207,14 +219,14 @@ class Signup extends Component {
                         Password
                         <Important>*</Important>
                     </Label>
-                    <Input type="password" placeholder='******' required />
+                    <Input minLength="5" maxLength="15"  type="password" placeholder='******' required onChange={(e) => setPassword(e.target.value)}/>
                 </InputBox> 
                 
                 <Words style={{textAlign: "center", margin: "15px"}}>
                     <Important>*</Important>
                     Mandatory Field
                 </Words>
-                <SendButtom type='submit'>
+                <SendButtom onClick={handleLogin} type='submit'>
                 <Words>Register</Words>
                 </SendButtom>
                 <Link to="*">Forgot Password?</Link>
@@ -226,7 +238,6 @@ class Signup extends Component {
         </SideContainer>
       </Container>
     )
-  }
 }
 
-export default Signup;
+export default Login;
