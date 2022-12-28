@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+// import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { categoryData } from '../slideData';
+// import { categoryData } from '../slideData';
 import Product from './Product';
 import axios from 'axios';
 
@@ -34,33 +34,80 @@ const Button = styled.button`
   }
 `;
 
-const ProductsAll = (cat, sort) => {
+const ProductsAll = ({cat, sort}) => {
 
   const [products, setProducts] = useState([]);
+  const [sortedproducts, setSortedproducts] = useState([])
 
   useEffect(() => {
     const getProds = async () => {
       try {
-        const res = await axios.get(cat ? `http://localhost:5005/product?category=${cat.cat}` : "http://localhost:5005/product");
+        const category = cat ? cat : "";
+        const res = await axios.get(`http://localhost:5005/product?category=${category}`);
         setProducts(res.data.data);
       } catch (error) {
         console.log(error);
       }
     };
     getProds();
-  }, [cat])
+  }, [cat]);
 
+  // useEffect(() => {
+  //   cat && setSortedproducts(products);
+  // }, [cat, products])
 
+  useEffect(() => {
+            if (cat && sort === "new") {
+              setSortedproducts(
+                [...products].sort((a, b) => {
+                  return (a.createdAt - b.createdAt);
+                })
+                )
+            } else if (cat && sort === "old") {
+              setSortedproducts(
+                [...products].sort((a, b) => {
+                  return (b.createdAt - a.createdAt);
+                })
+                )
+            } else if (cat && sort === "asc") {
+              setSortedproducts(
+                [...products].sort((a, b) => {
+                  if (a.title < b.title) {
+                    return -1;
+                  } else return 0;
+                })
+                )
+            } else if (cat && sort === "dsc") {
+              setSortedproducts(
+                [...products].sort((a, b) => {
+                  if (a.title > b.title) {
+                    return 1
+                  } else return 0
+                })
+                )
+            } else if (cat && sort === "high"){
+              setSortedproducts(
+                [...products].sort((a,b)=>a.unitprice - b.unitprice)
+              )
+            } else if (cat && sort === "low") {
+              setSortedproducts(
+                [...products].sort((a,b)=>b.unitprice - a.unitprice)
+              )
+            } else {
+              setSortedproducts(products);
+            }
+  }, [cat, products, sort]);
+  
     return (
       <Container>
         <ProductsAllContainer>
           { 
-              products.map(product => 
+              sortedproducts.map(product => 
                   <Product det={product} key={product.id}/>
                   )        
           }
         </ProductsAllContainer>
-        <Link to="/products"><Button>Load More</Button></Link>
+        <Button>Load More</Button>
       </Container>
     )
 }

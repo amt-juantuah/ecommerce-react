@@ -106,21 +106,21 @@ const Product = (det) => {
       <Container>
         <PiictureBack />
         <Image img={det.det.img} />
-        <Info>
-            <Link to="/prod">
-                <Icon>
-                  <AddShoppingCartOutlined />
-                </Icon>
-            </Link>
+        <Info>            
             <Icon>
-                <SearchOutlined />
+              <AddShoppingCartOutlined />
             </Icon>
+            <Link to={`/prod/${det.det._id}`}>
+              <Icon>
+                  <SearchOutlined />
+              </Icon>
+            </Link>
             <Icon>
                 <FavoriteBorderOutlined />
             </Icon>
             <Words>
               <Para>{det.det.title}</Para>
-              <Price>{ det.det.unitprice } per {det.det.sku}</Price>
+              <Price>GHC{ det.det.unitprice } per {det.det.sku}</Price>
               <Para>{det.det.skuquantity} pieces in a {det.det.sku}</Para>
               <Para>{det.det.volumeperpiece}</Para>
             </Words>

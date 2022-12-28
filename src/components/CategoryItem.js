@@ -109,21 +109,19 @@ const Button = styled.button`
     })}
 `;
 
-class CategoryItem extends Component {
-  render() {
+const CategoryItem = (det) => {
     return (
       <Container>
-        <Image img={this.props.det.img}/>
+        <Image img={det.det.img}/>
         <Info>
             <InfoCard>
-                <Title>{this.props.det.cat}</Title>
-                <Description>{this.props.det.description}</Description>
-                <Link to={`/products/${this.props.det.cat}`}><Button>Enter for Products</Button></Link>
+                <Title>{det.det.cat.replace(/_/g, " ")}</Title>
+                <Description>{det.det.description}</Description>
+                <Link to={`/products/${det.det.cat}`}><Button>Enter for Products</Button></Link>
             </InfoCard>
         </Info>
       </Container>
-    )
-  }
+      )
 }
 export default CategoryItem;
 

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Badge from "@mui/material/Badge";
 import { mobile } from '../responsive';
 import { categoryData } from '../slideData';
 import { KeyboardArrowDownRounded, KeyboardArrowRightRounded, ShoppingCartOutlined, CloseRounded, MenuOpenRounded } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
 
 
 const StyledNavbar = styled.div`
@@ -224,28 +225,27 @@ const CategoryItem = styled.div`
 //   font-size: 13px;
 // `;
 
-class Navbar extends Component {
+const Navbar = () => {
 
-  constructor(props) {
-    super(props);
-    this.state = {mobileMenu: 0, closeIcon: "none", openIcon: "flex"};
-    this.handleMenuOpen = this.handleMenuOpen.bind(this);
-    this.handleMenuClose = this.handleMenuClose.bind(this);
+  const [mobileMenu, setMobileMenu] = useState(0);
+  const [closeIcon, setCloseIcon] = useState("none");
+  const [openIcon, setOpenIcon] = useState("flex");
+
+  const cartQuantity = useSelector(state => state.cart.cartQuantity)
+
+
+  const handleMenuOpen = () => {
+    setMobileMenu(72);
+    setCloseIcon("flex");
+    setOpenIcon("none");
   }
 
-  handleMenuOpen() {
-    this.setState(st => (
-      {mobileMenu: 72, closeIcon: "flex", openIcon: "none"}
-    ))
+  const handleMenuClose = () => {
+    setMobileMenu(0);
+    setCloseIcon("none");
+    setOpenIcon("flex");
   }
 
-  handleMenuClose() {
-    this.setState(st => (
-      {mobileMenu: 0, closeIcon: "none", openIcon: "flex"}
-    ))
-  }
-
-  render() {
     return (
       <StyledNavbar>
         <Wrapper>
@@ -258,7 +258,7 @@ class Navbar extends Component {
               <Link to="/login"><MenuItem>Login</MenuItem></Link>
               <Link to="/cheqout">
                 <CartItem>
-                  <Badge badgeContent={4} color="primary">
+                  <Badge badgeContent={cartQuantity} color="primary">
                     <ShoppingCartOutlined style={{color: "#001"}}/>
                   </Badge>
                 </CartItem>
@@ -267,11 +267,11 @@ class Navbar extends Component {
             <LanguageStyle>ENG</LanguageStyle>
           </Right>
           <ToggleIcons>
-            <CloseRounded style={{fill: "var(--color-orange)",display: this.state.closeIcon, transition: "all 1s ease-in"}} onClick={this.handleMenuClose} />
-            <MenuOpenRounded style={{fill: "var(--color-orange)",display: this.state.openIcon, transition: "all 1s ease-out"}} onClick={this.handleMenuOpen} />
+            <CloseRounded style={{fill: "var(--color-orange)",display: closeIcon, transition: "all 1s ease-in"}} onClick={handleMenuClose} />
+            <MenuOpenRounded style={{fill: "var(--color-orange)",display: openIcon, transition: "all 1s ease-out"}} onClick={handleMenuOpen} />
           </ToggleIcons>
-          <MobileMenu width={this.state.mobileMenu}>
-            {this.state.mobileMenu ? 
+          <MobileMenu width={mobileMenu}>
+            {mobileMenu ? 
             <>
               <Link to="/new"><SignupMobile><span>Signup</span><KeyboardArrowRightRounded /></SignupMobile></Link>
               <Link to="/login"><LoginMobile><span>Login</span><KeyboardArrowRightRounded /></LoginMobile></Link>
@@ -288,7 +288,6 @@ class Navbar extends Component {
         </Wrapper>
       </StyledNavbar>
     )
-  }
 }
 
 export default Navbar;

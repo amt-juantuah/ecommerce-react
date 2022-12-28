@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Announcement from '../components/Announcement';
 import { Add, Remove } from '@mui/icons-material';
 import { mobile } from "../responsive";
+import { useLocation } from 'react-router-dom';
+import { outsideRequest } from '../requestAxios';
+import { useDispatch } from "react-redux";
+import { addProduct } from '../redux/cartRedx';
 
 
 const Container = styled.div``;
@@ -31,7 +35,12 @@ const Details = styled.div`
     flex: 1;
     height: 100%;
     padding: 8%;
-    ${mobile({alignSelf: "center"})}
+    ${mobile({
+        alignSelf: "center",
+        alignItems: "center",
+        display: "flex",
+        flexDirection: "column", 
+    })}
 `;
 
 const Title = styled.h3`
@@ -79,26 +88,37 @@ const AmountContainer = styled.div`
     font-weight: 700;
 `;
 
-// const Amount = styled.span`
-//     width: 60px;
-//     height: 40px;
-//     border-radius: 5px;
-//     border: 1px solid var(--color-orange);
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     margin: 0 4px;
-// `;
-
-const Quantity = styled.input`
+const Amount = styled.span`
+    width: 60px;
+    height: 30px;
     font-size: 15px;
-    max-width: 41px;
-    margin: 5px;
-    padding: 2px;
     border-radius: 3px;
     border: 1px solid var(--color-orange);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    overflow: hidden;
+    background-color: #fff;
 `;
+
+const Total = styled.span`
+    font-size: 13px;
+    border-radius: 3px;
+    margin: 0 4px;
+    margin-left: 15px;
+    color: red;
+`;
+
+// const Quantity = styled.input`
+//     font-size: 15px;
+//     max-width: 41px;
+//     margin: 5px;
+//     padding: 2px;
+//     border-radius: 3px;
+//     border: 1px solid var(--color-orange);
+//     text-align: center;
+// `;
 
 const Button = styled.button`
     display: block;
@@ -115,35 +135,76 @@ const Button = styled.button`
         background-color: #007020;
         color: var(--color-orange);   
     };
+    ${mobile({
+        marginRight: "auto",
+        marginLeft: "auto",
+    })}
 `;
 
-class Product extends Component {
-  render() {
+const Product = () => {
+    const location = useLocation()
+    const pId = location.pathname.split("/")[2];
+
+    const [product, setProduct] = useState([]);
+    const [quant, setQuant] = useState(1);
+    const [totalAmount, setTotalAmount] = useState();
+    const dispatch = useDispatch();
+    
+
+    useEffect(() => {
+        const getProd = async () => {
+            try { 
+                const prod = await outsideRequest.get(`/product/${pId}`)
+                setProduct(prod.data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getProd();
+    }, [pId])
+
+    useEffect(() => {
+        const total = product.unitprice * quant;
+        setTotalAmount(total);
+    }, [product, quant])
+    
+    const handleQuantity = (action) => {
+        if (action === "increase") {
+            setQuant(quant+1)
+        } else if (action === "decrease" && quant > 1) {
+            setQuant(quant-1)
+        }
+    }
+
+    const handleAddtocart = () => {
+        dispatch(addProduct({ ...product, quantity:quant, total:totalAmount }))
+    }
+
     return (
       <Container>
         <Announcement />
         <Navbar />
         <Wrapper>
-            <Image img="https://melcom.com/media/catalog/product/cache/d0e1b0d5c74d14bfa9f7dd43ec52d082/4/8/48454a_1.jpg"></Image>
+            <Image img={product.img}></Image>
             <Details>
-                <Title>Gino Tomato Paste</Title>
-                <Description>16 pieces in a Carton.</Description>
-                <Price>GHS 28 <Package>/ Carton</Package></Price>
-                <Source>From Unilever, Ghana</Source>
+                <Title>{product.title}</Title>
+                <Description>{product.skuquantity} pieces in a {product.sku}</Description>
+                <Price>GHS {product.unitprice} <Package>/ {product.sku}</Package></Price>
+                <Source>From {product.source}</Source>
                 <BuyContainer>
                     <AmountContainer>
-                        <Remove />
-                        <Quantity type="text" defaultValue="1" />
-                        <Add />
+                        <Remove onClick={() => handleQuantity("decrease")} />
+                        <Amount>{quant}</Amount>
+                        <Add onClick={() => handleQuantity("increase")} />                        
                     </AmountContainer>                    
                 </BuyContainer>
-                <Button>Add to cart</Button>
+                <Total>{totalAmount} cedis</Total>
+                <Button onClick={handleAddtocart}>Add to cart</Button>
             </Details>            
         </Wrapper>
         <Footer />
       </Container>
     )
-  }
 }
 
 

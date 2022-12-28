@@ -62,20 +62,23 @@ const Products = () => {
   
   const location = useLocation();
   const categoryName = location.pathname.split("/")[2];
-  const [cat, setCat] = useState({"cat":categoryName});
-  const [sort, setSort] = useState({"sort":"date_desc"});
+  const [cat, setCat] = useState(categoryName);
+  const [sort, setSort] = useState("new");
 
   const handleCat = (e) => {
     const val = e.target.value;
-    setCat({
-      "cat": val
-    })
+    setCat(val)
+  }
+
+  const handleSort = (e) => {
+    const val = e.target.value;
+    setSort(val)
   }
     return (
       <Container>
         <Announcement />
         <Navbar />
-        <Title>Products</Title>
+        <Title>{cat.replace(/_/g, " ")} products</Title>
         <FiltContain>
           <Filt>
             <FiltText>Filter: </FiltText>
@@ -92,7 +95,7 @@ const Products = () => {
               <Option value="others">Others</Option>
             </Select>
             <Select>
-              <Option disabled>Company Brand</Option>
+              <Option>Company Brand</Option>
               <Option>Nestle</Option>
               <Option>Unilever</Option>
               <Option>Promasidor</Option>
@@ -108,15 +111,18 @@ const Products = () => {
           </Filt>
           <Filt>
             <FiltText>Sort: </FiltText>
-            <Select onChange={(e) => setSort({"sort":e.target.value})}>
-              <Option value="date_desc">Date Added (DSC)</Option>
-              <Option value="date_asc">Date Added (ASC)</Option>
-              <Option value="name_desc">Name (DSC)</Option>
-              <Option value="date_asc">Name (ASC)</Option>
+            <Select onChange={handleSort}>
+              <Option disabled>Sort by</Option>
+              <Option value="new">Date Added (DSC)</Option>
+              <Option value="old">Date Added (ASC)</Option>
+              <Option value="asc">Name (ASC)</Option>
+              <Option value="dsc">Name (DSC)</Option>
+              <Option value="high">Price (ASC)</Option>
+              <Option value="low">Price (DSC)</Option>
             </Select>
           </Filt>
         </FiltContain>
-        <ProductsAll cat={cat.cat} sort={sort.sort}/>
+        <ProductsAll cat={cat} sort={sort}/>
         <Footer />
       </Container>
     )

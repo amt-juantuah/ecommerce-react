@@ -20,7 +20,7 @@ function App() {
           <Route path="/new" element={user? <Navigate to="/" /> : <Signup />} />
           <Route path="/products/:category" element={<Products />} />
           <Route path="/catg" element={<Category />} />
-          <Route path="/prod" element={<Product />} />
+          <Route path="/prod/:id" element={<Product />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/" element={<Homepage />} />
           <Route path="*" element={<Blank />} />
