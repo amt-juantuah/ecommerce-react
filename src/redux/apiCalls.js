@@ -6,7 +6,6 @@ export const login = async (dispatch, user) => {
     dispatch(loginStart());
     try {
         const res = await outsideRequest.post('/auth/login', user);
-        console.log(res)
         res.data.success ? dispatch(loginSuccess(res.data.data)) : dispatch(loginFailure());
     } catch (error) {
         dispatch(loginFailure());
