@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { MailLockOutlined, LockOutlined } from '@mui/icons-material';
 import { mobile } from '../responsive';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from '../redux/apiCalls';
 
 
@@ -29,6 +29,13 @@ const SendButtom = styled.button`
     border-radius: 4px;
     margin-top: 20px;
     gap: 5px;
+    &:disabled {
+        background-color: #393a3487;
+        cursor: not-allowed;
+        &:hover {
+            opacity: 1;
+        }
+    }
     &:hover {
         opacity: 0.7;
     }
@@ -37,6 +44,15 @@ const SendButtom = styled.button`
 const Words = styled.p`
     font-size: 14px;
     font-weight: 500;
+`;
+
+const Error = styled.p`
+    font-size: 13px;
+    font-weight: 500;
+    color: red;
+    text-align: center;
+    border: 1px solid red;
+    padding: 2px;
 `;
 
 const FormContainer = styled.div`
@@ -190,8 +206,8 @@ const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const { isFetching, error } = useSelector(state => state.user)
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -226,8 +242,9 @@ const Login = () => {
                     <Important>*</Important>
                     Mandatory Field
                 </Words>
-                <SendButtom onClick={handleLogin} type='submit'>
-                <Words>Register</Words>
+                {error && <Error>Either username or password was not correct</Error>}
+                <SendButtom disabled={isFetching || username.length < 5 || password.length < 5} onClick={handleLogin} type='submit'>
+                <Words>Login</Words>
                 </SendButtom>
                 <Link to="*">Forgot Password?</Link>
                 <Link to="/new">New here? Create an account</Link>

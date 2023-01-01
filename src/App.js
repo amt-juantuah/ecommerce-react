@@ -8,10 +8,11 @@ import Signup from './sheets/Signup';
 import Login from './sheets/Login';
 import Cart from './sheets/Cart';
 import Blank from './sheets/Blank.js';
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  const user = false;
+  const user = useSelector(state => state.user.currentUser);
   return (
     <div className="App">
       <Routes>
